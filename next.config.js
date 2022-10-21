@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-}
 
-module.exports = nextConfig
+import i18n from './next-i18next.config';
+
+module.exports = {
+  reactStrictMode: true,
+  i18n,
+};
