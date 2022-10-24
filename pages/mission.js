@@ -1,3 +1,9 @@
+import { css } from '@emotion/react';
+
+// const styles = css`
+//   background-color: #d8f3fa;
+// `;
+
 export default function Mission() {
   return (
     <div>
