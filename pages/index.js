@@ -4,17 +4,10 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import Navigation from '../components/Navigation';
 
-export async function getStaticProps(locale) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['../public/en/index'])),
-    },
-  };
-}
-
-export default function Home(props) {
-  const { t } = useTranslation();
+export default function Home() {
+  const { t } = useTranslation('');
   return (
     <div>
       <Head>
@@ -24,15 +17,7 @@ export default function Home(props) {
       </Head>
 
       <main>
-        <nav>
-          <Link href="/ ">Home</Link>
-          <Link href="mission">Mission</Link>
-          <Link href="projects">Projects</Link>
-          <Link href=" https://www.paypal.com/donate?campaign_id=7EL84EE7EKN4Y">
-            Donate
-          </Link>
-          <Link href="https://example.com/ ">فارسی</Link>
-        </nav>
+        <Navigation />
 
         <h1> {t('index:title')} </h1>
 
@@ -64,7 +49,7 @@ export default function Home(props) {
           </a>
           <a>
             <h3>{t('index:future_projects')}</h3>
-            <p> {t('future_projects_subheading')}</p>
+            <p> {t('index:future_projects_subheading')}</p>
           </a>
         </div>
       </main>
@@ -72,4 +57,12 @@ export default function Home(props) {
       <footer> Follow OpIrRen on IG Tel Tw</footer>
     </div>
   );
+}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common', 'index'])),
+    },
+  };
 }
