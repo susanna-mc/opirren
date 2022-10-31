@@ -7,7 +7,12 @@ export default function Mission() {
   const { t } = useTranslation('');
   return (
     <div>
-      {/* NEED TO IMPORT AND CREATE HEAD */}
+      <Head>
+        <title>Mission: Operation Iranian Renaissance</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* <link rel="icon" href="/favicon.ico" /> */}
+      </Head>
+
       <Navigation />
 
       <h2>{t('mission:mission_statement_heading')}</h2>
@@ -16,16 +21,14 @@ export default function Mission() {
       <h3>{t('mission:mission_statement_international')}</h3>
       <p>{t('mission:mission_statement_international_subheading')}</p>
       <h2>{t('mission:values_statement_heading')}</h2>
-      <p>
-        {t('mission:values_statement_subheading')}
-        <ul>
-          <li>{t('mission:values_democracy')}</li>
-          <li>{t('mission:values_expression')}</li>
-          <li>{t('mission:values_secularism')}</li>
-          <li>{t('mission:values_territory')}</li>
-          <li>{t('mission:values_pluralism')}</li>
-        </ul>
-      </p>
+      <p id="values">{t('mission:values_statement_subheading')} </p>
+      <ul>
+        <li>{t('mission:values_democracy')}</li>
+        <li>{t('mission:values_expression')}</li>
+        <li>{t('mission:values_secularism')}</li>
+        <li>{t('mission:values_territory')}</li>
+        <li>{t('mission:values_pluralism')}</li>
+      </ul>
     </div>
   );
 }
