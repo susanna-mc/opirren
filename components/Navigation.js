@@ -44,8 +44,8 @@ export default function Navigation() {
 
   return (
     <header>
-      <nav className="navbar navbar-expand-lg fixed-top" css={navbar}>
-        <div className="container-fluid">
+      <nav css={navbar}>
+        {/* <div >
           <button
             className="navbar-toggler"
             type="button"
@@ -53,75 +53,73 @@ export default function Navigation() {
             data-bs-target="#collapsibleNavbar"
           >
             <span className="navbar-toggler-icon" />
-          </button>
-          <div className="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul className="navbar-nav nav-pills">
-              <Link className="navbar-brand" href="/">
+          </button> */}
+        <div>
+          <ul>
+            <Link href="/">
+              <a
+                className={`nav-link ${
+                  router?.pathname === '/' ? 'active' : ''
+                }`}
+              >
+                <img
+                  src="/logowhitelongform.png"
+                  alt="Operation Iranian Renaissance Logo"
+                  height="40px"
+                />
+              </a>
+            </Link>
+            <li href="/">
+              <Link href="/">
                 <a
                   className={`nav-link ${
                     router?.pathname === '/' ? 'active' : ''
                   }`}
                 >
-                  <img
-                    src="/logowhitelongform.png"
-                    alt="Operation Iranian Renaissance Logo"
-                    className="float-start"
-                    height="40px"
-                  />
+                  {t('common.home')}
                 </a>
               </Link>
-              <li className="nav-item" href="/">
-                <Link href="/">
-                  <a
-                    className={`nav-link ${
-                      router?.pathname === '/' ? 'active' : ''
-                    }`}
-                  >
-                    {t('common.home')}
-                  </a>
-                </Link>
-              </li>
+            </li>
 
-              <li className="nav-item" href="/mission">
-                <Link href="/mission">
-                  <a
-                    className={`nav-link ${
-                      router?.pathname === '/mission' ? 'active' : ''
-                    }`}
-                  >
-                    {t('common.mission')}
-                  </a>
-                </Link>
-              </li>
+            <li href="/mission">
+              <Link href="/mission">
+                <a
+                  className={`nav-link ${
+                    router?.pathname === '/mission' ? 'active' : ''
+                  }`}
+                >
+                  {t('common.mission')}
+                </a>
+              </Link>
+            </li>
 
-              <li className="nav-item" href="/projects">
-                <Link href="/projects">
-                  <a
-                    className={`nav-link ${
-                      router?.pathname === '/projects' ? 'active' : ''
-                    }`}
-                  >
-                    {t('common.projects')}
-                  </a>
-                </Link>
-              </li>
+            <li href="/projects">
+              <Link href="/projects">
+                <a
+                  className={`nav-link ${
+                    router?.pathname === '/projects' ? 'active' : ''
+                  }`}
+                >
+                  {t('common.projects')}
+                </a>
+              </Link>
+            </li>
 
-              <li className="nav-item" href="/donate" css={donateButton}>
-                <Link href="/donate">
-                  <a
-                    className={`nav-link ${
-                      router?.pathname === '/donate' ? 'active' : ''
-                    }`}
-                  >
-                    {t('common.donate')}
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <LocaleSwitcher />{' '}
-              </li>
-            </ul>
-          </div>
+            <li href="/donate" css={donateButton}>
+              <Link href="/donate">
+                <a
+                  className={`nav-link ${
+                    router?.pathname === '/donate' ? 'active' : ''
+                  }`}
+                >
+                  {t('common.donate')}
+                </a>
+              </Link>
+            </li>
+            <li>
+              <LocaleSwitcher />{' '}
+            </li>
+          </ul>
         </div>
       </nav>
     </header>

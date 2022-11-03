@@ -34,7 +34,7 @@ export default function Home() {
     <div>
       <Head>
         <title>Operation Iranian Renaissance</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -44,27 +44,27 @@ export default function Home() {
         <img
           src="/hero-image.jpeg"
           alt="Two Iraian young women without hijabs standing back to back with arms outstretched, dangling navy blue hijabs from their hands with trees in the background "
-          className="img-fluid"
+          // className="img-fluid"
         />
 
         <h1> {t('index:title')} </h1>
 
         <p> {t('index:recent_pubs')} </p>
         <div css={projectSection}>
-          <div className="container" css={projectBoxes}>
+          <div css={projectBoxes}>
             <a>
               <h2> {t('index:protest_safely')}</h2>
               <p> {t('index:protest_safely_subheading')}</p>
             </a>
           </div>
 
-          <div className="container" css={projectBoxes}>
+          <div css={projectBoxes}>
             <a>
               <h2>{t('index:social_media_assets')}</h2>
               <p>{t('index:social_media_assets_subheading')}</p>
             </a>
           </div>
-          <div className="container" css={projectBoxes}>
+          <div css={projectBoxes}>
             <a>
               <h2>{t('index:treat_wounds')} </h2>
               <p>{t('index:treat_wounds_subheading')}</p>
@@ -72,58 +72,51 @@ export default function Home() {
           </div>
         </div>
         <br />
-        <div className="row" css={infoSection}>
-          <div className="col-sm-3 container pt-5 mt-5 card">
-            <div className="card-body">
+        <div css={infoSection}>
+          <div>
+            <div>
               <Link href="/mission">
                 <a>
                   <img
                     src="/missionImage.png"
                     alt="Artwork by Istanbul based artist Hemad Javadzade.
                     Painting features an Iranian woman wearing a white shirt and blue pants wrestling a brown hairy demon that wears black boots. With one arm she pulls back the jaw of the demon, the other arm is raised and grasping scissors. One foot is stomping on the demon's baton, to keep the weapon out of his reach. Her black hair is not covered by a hijab and swirls around her body in a shape that resembles the borders of Iran. She looks angry and determined as the demon snarls with it's tongue out."
-                    className="card-img-top"
                     height="300px"
                   />
-                  <h3 className="card-title">{t('index:mission')}</h3>
-                  <p className="card-text"> {t('index:mission_subheading')}</p>
+                  <h3>{t('index:mission')}</h3>
+                  <p> {t('index:mission_subheading')}</p>
                 </a>
               </Link>
             </div>
           </div>
 
-          <div className=" col-sm-3 container pt-5 mt-5 card" css={infoBoxes}>
-            <div className="card-body">
+          <div css={infoBoxes}>
+            <div>
               <Link href="/projects">
                 <a>
                   <img
                     src="/futureImage.png"
                     alt="PLACEHOLDER"
-                    className="card-img-top"
                     height="300px"
                   />
-                  <h3 className="card-title">{t('index:future_projects')}</h3>
-                  <p className="card-text">
-                    {' '}
-                    {t('index:future_projects_subheading')}
-                  </p>
+                  <h3>{t('index:future_projects')}</h3>
+                  <p> {t('index:future_projects_subheading')}</p>
                 </a>
               </Link>
             </div>
           </div>
-          <div className=" col-sm-3 container pt-5 mt-5  card" css={infoBoxes}>
-            <div className=" card-body">
+          <div css={infoBoxes}>
+            <div>
               <Link href="/mission#values">
                 <a>
                   <img
                     src="/valuesImage.png"
                     alt="Four women chatting pleasantly at a table in Iran. Two are wearing conservative black chadors, two are without hijab."
-                    className="card-img-top"
                     height="300px"
                   />
-                  {/* <div className="card-img-overlay"> */}
-                  <h3 className="card-title">{t('index:values')}</h3>
-                  <p className="card-text"> {t('index:values_subheading')}</p>
-                  {/* </div> */}
+
+                  <h3>{t('index:values')}</h3>
+                  <p> {t('index:values_subheading')}</p>
                 </a>
               </Link>
             </div>
