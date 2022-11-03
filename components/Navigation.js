@@ -117,8 +117,10 @@ export default function Navigation() {
                   </a>
                 </Link>
               </li>
+              <li>
+                <LocaleSwitcher />{' '}
+              </li>
             </ul>
-            <LocaleSwitcher />
           </div>
         </div>
       </nav>

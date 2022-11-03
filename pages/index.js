@@ -72,8 +72,8 @@ export default function Home() {
           </div>
         </div>
         <br />
-        <div css={infoSection}>
-          <div className="container pt-5 mt-5 mb-5 card">
+        <div className="row" css={infoSection}>
+          <div className="col-sm-3 container pt-5 mt-5 card">
             <div className="card-body">
               <Link href="/mission">
                 <a>
@@ -91,7 +91,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="container pt-5 mt-5 mb-5 card" css={infoBoxes}>
+          <div className=" col-sm-3 container pt-5 mt-5 card" css={infoBoxes}>
             <div className="card-body">
               <Link href="/projects">
                 <a>
@@ -110,7 +110,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="container pt-5 mt-5 mb-5 card" css={infoBoxes}>
+          <div className=" col-sm-3 container pt-5 mt-5  card" css={infoBoxes}>
             <div className=" card-body">
               <Link href="/mission#values">
                 <a>
