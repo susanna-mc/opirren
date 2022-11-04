@@ -42,7 +42,7 @@ export default function Album() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position="relative">
+      <AppBar position="static">
         <Toolbar css={test}>
           {/* <CameraIcon sx={{ mr: 2 }} /> */}
           <Typography variant="h6" color="inherit" noWrap>
