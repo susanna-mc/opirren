@@ -28,6 +28,8 @@ const infoBoxes = css`
   flex-direction: column;
 `;
 
+// RANDOM COMMENT
+
 export default function Home() {
   const { t } = useTranslation('');
   return (
