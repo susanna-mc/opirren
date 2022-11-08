@@ -1,1 +1,10 @@
-{"home":"صفحه اصلی","donate":"اهدا کنید","mission":"ماموریت","persian":"فارسی","projects":"پروژه ها"}
+{
+  "common": {
+    "home": "صفحه اصلی",
+    "donate": "اهدا کنید",
+    "follow": "OpIrRen را دنبال کنید:",
+    "mission": "ماموریت",
+    "persian": "فارسی",
+    "projects": "پروژه ها"
+  }
+}

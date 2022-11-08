@@ -1,8 +1,8 @@
 import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
@@ -11,24 +11,155 @@ const projectSection = css`
   display: flex;
 
   flex-direction: row;
-`;
-const projectBoxes = css`
-  width: 33%;
-  flex-direction: column;
+  a {
+    color: black;
+  }
+
+  a:hover {
+    color: #2c8bac;
+  }
 `;
 
 const infoSection = css`
   display: flex;
   background-color: #2c8bac;
   flex-direction: row;
+  padding: 20px 20px;
 `;
 
 const infoBoxes = css`
-  margin: 20px
-  flex-direction: column;
-`;
+  margin: auto;
 
-// RANDOM COMMENT
+  flex-direction: column;
+  a {
+    color: #fff;
+  }
+  a:hover {
+    color: #f6b91c;
+  }
+`;
+// INFO BOXES
+const DisplayOver = styled.div({
+  height: '100%',
+  left: '0',
+  position: 'absolute',
+  top: '0',
+  width: '100%',
+  zIndex: 2,
+  transition: 'background-color 350ms ease',
+  backgroundColor: 'transparent',
+  padding: '20px 20px 0 20px',
+  boxSizing: 'border-box',
+});
+
+const BigTitle = styled.h2({
+  textTransform: 'uppercase',
+
+  position: 'absolute',
+  bottom: '60px',
+});
+
+const Hover = styled.div({
+  opacity: 0,
+  transition: 'opacity 350ms ease',
+});
+
+const Paragraph = styled.p({
+  transform: 'translate3d(0,50px,0)',
+  transition: 'transform 350ms ease',
+  position: 'absolute',
+  bottom: '5px',
+  textAlign: 'center',
+});
+
+const styleda = styled.a({
+  color: '#fff',
+});
+
+const Heroimage = styled.div({
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  color: '#FFF',
+  textShadow: '2px 2px 6px #303030',
+  position: 'relative',
+  width: '100%',
+  height: '350px',
+  cursor: 'pointer',
+  backgroundImage: 'url(/imgs/blueheroimage.svg)',
+
+  [`:hover ${DisplayOver}`]: {
+    backgroundColor: 'rgba(0,0,0,.5)',
+  },
+  [` :hover ${Paragraph}`]: {
+    transform: 'translate3d(0,0,0)',
+  },
+  [`:hover ${Hover}`]: {
+    opacity: 1,
+  },
+});
+
+const MissionInfobox = styled.div({
+  backgroundSize: 'contain',
+  backgroundRepeat: 'no-repeat',
+  color: '#FFF',
+  position: 'relative',
+  width: '350px',
+  height: '350px',
+  cursor: 'pointer',
+  backgroundImage: 'url(/imgs/missionImage.png)',
+
+  [`:hover ${DisplayOver}`]: {
+    backgroundColor: 'rgba(0,0,0,.5)',
+  },
+  [` :hover ${Paragraph}`]: {
+    transform: 'translate3d(0,0,0)',
+  },
+  [`:hover ${Hover}`]: {
+    opacity: 1,
+  },
+});
+
+const ProjectInfobox = styled.div({
+  backgroundSize: 'contain',
+  backgroundRepeat: 'no-repeat',
+  color: '#FFF',
+  position: 'relative',
+  width: '350px',
+  height: '350px',
+  cursor: 'pointer',
+  backgroundImage: 'url(/imgs/futureImage.png)',
+
+  [`:hover ${DisplayOver}`]: {
+    backgroundColor: 'rgba(0,0,0,.5)',
+  },
+  [` :hover ${Paragraph}`]: {
+    transform: 'translate3d(0,0,0)',
+  },
+  [`:hover ${Hover}`]: {
+    opacity: 1,
+  },
+});
+
+const ValuesInfobox = styled.div({
+  backgroundSize: 'contain',
+  backgroundRepeat: 'no-repeat',
+  color: '#FFF',
+  position: 'relative',
+  width: '350px',
+  height: '350px',
+  cursor: 'pointer',
+  backgroundImage: 'url(/imgs/valuesImage.png)',
+
+  [`:hover ${DisplayOver}`]: {
+    backgroundColor: 'rgba(0,0,0,.5)',
+  },
+  [` :hover ${Paragraph}`]: {
+    transform: 'translate3d(0,0,0)',
+  },
+  [`:hover ${Hover}`]: {
+    opacity: 1,
+  },
+});
 
 export default function Home() {
   const { t } = useTranslation('');
@@ -42,92 +173,132 @@ export default function Home() {
 
       <main>
         <Navigation />
+        <div>
+          <Heroimage>
+            <DisplayOver>
+              <Link href="/mission">
+                <styleda>
+                  <BigTitle>{t('index:title')}</BigTitle>
+                  <Hover>
+                    <Paragraph>{t('index:title_subheading')}</Paragraph>
+                  </Hover>
+                </styleda>
+              </Link>
+            </DisplayOver>
+          </Heroimage>
+        </div>
+        <br />
 
-        <img
-          src="/hero-image.jpeg"
-          alt="Two Iraian young women without hijabs standing back to back with arms outstretched, dangling navy blue hijabs from their hands with trees in the background "
-          className="img-fluid"
-        />
+        {/* <h3> {t('index:recent_pubs')} </h3> */}
+        <div className="container">
+          <div className="row" css={projectSection}>
+            <div className="col-lg-4 col-sm-6 mb-4">
+              <div className="card h-100">
+                <div className="card-body">
+                  <Link href="/projects">
+                    <a className="card-link">
+                      <img
+                        src="/imgs/protestdisplaysquare.svg"
+                        alt="PLACEHOLDER"
+                        className="card-img-top"
+                      />{' '}
+                      <h2> {t('index:protest_safely')}</h2>
+                      <p> {t('index:protest_safely_subheading')}</p>
+                    </a>
+                  </Link>
+                </div>
+              </div>
+            </div>
 
-        <h1> {t('index:title')} </h1>
-
-        <p> {t('index:recent_pubs')} </p>
-        <div css={projectSection}>
-          <div className="container" css={projectBoxes}>
-            <a>
-              <h2> {t('index:protest_safely')}</h2>
-              <p> {t('index:protest_safely_subheading')}</p>
-            </a>
-          </div>
-
-          <div className="container" css={projectBoxes}>
-            <a>
-              <h2>{t('index:social_media_assets')}</h2>
-              <p>{t('index:social_media_assets_subheading')}</p>
-            </a>
-          </div>
-          <div className="container" css={projectBoxes}>
-            <a>
-              <h2>{t('index:treat_wounds')} </h2>
-              <p>{t('index:treat_wounds_subheading')}</p>
-            </a>
+            <div className="col-lg-4 col-sm-6 mb-4">
+              <div className="card h-100">
+                <div className="card-body">
+                  <Link href="/projects">
+                    <a>
+                      <img
+                        src="/imgs/distributivematerials.svg"
+                        alt="PLACEHOLDER"
+                        className="card-img-top"
+                      />{' '}
+                      <h2>{t('index:social_media_assets')}</h2>
+                      <p>{t('index:social_media_assets_subheading')}</p>
+                    </a>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4 col-sm-6 mb-4">
+              <div className="card h-100">
+                <div className="card-body">
+                  <Link href="/projects">
+                    <a>
+                      <img
+                        src="/imgs/bleedingdisplaysquare.svg"
+                        alt="PLACEHOLDER"
+                        className="card-img-top"
+                      />
+                      <h2>{t('index:treat_wounds')} </h2>
+                      <p>{t('index:treat_wounds_subheading')}</p>
+                    </a>
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <br />
-        <div className="row" css={infoSection}>
-          <div className="col-sm-3 container pt-5 mt-5 card">
-            <div className="card-body">
-              <Link href="/mission">
-                <a>
-                  <img
-                    src="/missionImage.png"
-                    alt="Artwork by Istanbul based artist Hemad Javadzade.
-                    Painting features an Iranian woman wearing a white shirt and blue pants wrestling a brown hairy demon that wears black boots. With one arm she pulls back the jaw of the demon, the other arm is raised and grasping scissors. One foot is stomping on the demon's baton, to keep the weapon out of his reach. Her black hair is not covered by a hijab and swirls around her body in a shape that resembles the borders of Iran. She looks angry and determined as the demon snarls with it's tongue out."
-                    className="card-img-top"
-                    height="300px"
-                  />
-                  <h3 className="card-title">{t('index:mission')}</h3>
-                  <p className="card-text"> {t('index:mission_subheading')}</p>
-                </a>
-              </Link>
-            </div>
-          </div>
+        <div css={infoSection}>
+          <div className="container">
+            <div className="row">
+              <MissionInfobox
+                className="col-lg-4 col-sm-6 mb-4 "
+                css={infoBoxes}
+              >
+                <Link href="/mission">
+                  <a>
+                    <DisplayOver>
+                      <BigTitle>{t('index:mission')}</BigTitle>
+                      <Hover>
+                        <Paragraph>{t('index:mission_subheading')}</Paragraph>
+                      </Hover>
+                    </DisplayOver>
+                  </a>
+                </Link>
+              </MissionInfobox>
 
-          <div className=" col-sm-3 container pt-5 mt-5 card" css={infoBoxes}>
-            <div className="card-body">
-              <Link href="/projects">
-                <a>
-                  <img
-                    src="/futureImage.png"
-                    alt="PLACEHOLDER"
-                    className="card-img-top"
-                    height="300px"
-                  />
-                  <h3 className="card-title">{t('index:future_projects')}</h3>
-                  <p className="card-text">
-                    {' '}
-                    {t('index:future_projects_subheading')}
-                  </p>
-                </a>
-              </Link>
-            </div>
-          </div>
-          <div className=" col-sm-3 container pt-5 mt-5  card" css={infoBoxes}>
-            <div className=" card-body">
-              <Link href="/mission#values">
-                <a>
-                  <img
-                    src="/valuesImage.png"
-                    alt="Four women chatting pleasantly at a table in Iran. Two are wearing conservative black chadors, two are without hijab."
-                    className="card-img-top"
-                    height="300px"
-                  />
-                  {/* <div className="card-img-overlay"> */}
-                  <h3 className="card-title">{t('index:values')}</h3>
-                  <p className="card-text"> {t('index:values_subheading')}</p>
-                  {/* </div> */}
-                </a>
-              </Link>
+              <ProjectInfobox
+                className="col-lg-4 col-sm-6 mb-4 "
+                css={infoBoxes}
+              >
+                <Link href="/mission">
+                  <a>
+                    <DisplayOver>
+                      <BigTitle>{t('index:future_projects')}</BigTitle>
+                      <Hover>
+                        <Paragraph>
+                          {t('index:future_projects_subheading')}
+                        </Paragraph>
+                      </Hover>
+                    </DisplayOver>
+                  </a>
+                </Link>
+              </ProjectInfobox>
+
+              <ValuesInfobox
+                className="col-lg-4 col-sm-6 mb-4 "
+                css={infoBoxes}
+              >
+                <Link href="/mission">
+                  <a>
+                    <DisplayOver>
+                      <BigTitle>{t('index:values')}</BigTitle>
+                      <Hover>
+                        <Paragraph>{t('index:values_subheading')}</Paragraph>
+                      </Hover>
+                    </DisplayOver>
+                  </a>
+                </Link>
+              </ValuesInfobox>
             </div>
           </div>
         </div>

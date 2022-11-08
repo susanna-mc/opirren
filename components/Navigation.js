@@ -1,9 +1,18 @@
 import { css } from '@emotion/react';
+import {
+  MDBCollapse,
+  MDBContainer,
+  MDBIcon,
+  MDBNavbar,
+  MDBNavbarBrand,
+  MDBNavbarItem,
+  MDBNavbarLink,
+  MDBNavbarNav,
+  MDBNavbarToggler,
+} from 'mdb-react-ui-kit';
 import { useTranslation } from 'next-i18next';
-import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import LocaleSwitcher from './locale-switcher';
 
 const navbar = css`
@@ -21,20 +30,25 @@ const navbar = css`
     color: white;
     font-weight: bold;
   }
+  a:active {
+    color: white;
+    font-weight: bold;
+  }
 `;
 
-const donateButton = css`
-  background-color: #0326cb;
-  border-radius: 15px;
-  height: 35px;
-  margin-left: 20px;
-`;
+// const donateButton = css`
+//   background-color: #0326cb;
+//   padding: 10px 5px;
+//   border-radius: 15px;
+//   height: 20px;
+// margin-left: 20px;
+// `;
 
 export default function Navigation() {
   const router = useRouter();
 
   const { t } = useTranslation('');
-
+  const [showNavNoTogglerSecond, setShowNavNoTogglerSecond] = useState(false);
   useEffect(() => {
     let dir = router.locale == 'fa' ? 'rtl' : 'ltr';
     let lang = router.locale == 'fa' ? 'fa' : 'en';
@@ -44,34 +58,34 @@ export default function Navigation() {
 
   return (
     <header>
-      <nav className="navbar navbar-expand-lg fixed-top" css={navbar}>
-        <div className="container-fluid">
-          <button
-            className="navbar-toggler"
+      <MDBNavbar expand="lg" fixed="top" role="navigation" css={navbar}>
+        <MDBContainer fluid>
+          <MDBNavbarBrand href="/">
+            <a
+              className={`nav-link ${router?.pathname === '/' ? 'active' : ''}`}
+            >
+              <img
+                src="/imgs/logowhitelongform.png"
+                alt="Operation Iranian Renaissance Logo"
+                className="float-start"
+                height="40px"
+              />
+            </a>
+          </MDBNavbarBrand>
+          <MDBNavbarToggler
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapsibleNavbar"
+            data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            onClick={() => setShowNavNoTogglerSecond(!showNavNoTogglerSecond)}
           >
-            <span className="navbar-toggler-icon" />
-          </button>
-          <div className="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul className="navbar-nav nav-pills">
-              <Link className="navbar-brand" href="/">
-                <a
-                  className={`nav-link ${
-                    router?.pathname === '/' ? 'active' : ''
-                  }`}
-                >
-                  <img
-                    src="/logowhitelongform.png"
-                    alt="Operation Iranian Renaissance Logo"
-                    className="float-start"
-                    height="40px"
-                  />
-                </a>
-              </Link>
-              <li className="nav-item" href="/">
-                <Link href="/">
+            <MDBIcon style={{ color: '#f6b91c' }} icon="bars" fas />
+          </MDBNavbarToggler>
+          <MDBCollapse navbar show={showNavNoTogglerSecond}>
+            <MDBNavbarNav className="mr-auto mb-2 mb-lg-0">
+              <MDBNavbarItem>
+                <MDBNavbarLink href="/">
                   <a
                     className={`nav-link ${
                       router?.pathname === '/' ? 'active' : ''
@@ -79,11 +93,10 @@ export default function Navigation() {
                   >
                     {t('common.home')}
                   </a>
-                </Link>
-              </li>
-
-              <li className="nav-item" href="/mission">
-                <Link href="/mission">
+                </MDBNavbarLink>
+              </MDBNavbarItem>
+              <MDBNavbarItem>
+                <MDBNavbarLink href="/mission">
                   <a
                     className={`nav-link ${
                       router?.pathname === '/mission' ? 'active' : ''
@@ -91,11 +104,10 @@ export default function Navigation() {
                   >
                     {t('common.mission')}
                   </a>
-                </Link>
-              </li>
-
-              <li className="nav-item" href="/projects">
-                <Link href="/projects">
+                </MDBNavbarLink>
+              </MDBNavbarItem>
+              <MDBNavbarItem>
+                <MDBNavbarLink href="/projects">
                   <a
                     className={`nav-link ${
                       router?.pathname === '/projects' ? 'active' : ''
@@ -103,11 +115,10 @@ export default function Navigation() {
                   >
                     {t('common.projects')}
                   </a>
-                </Link>
-              </li>
-
-              <li className="nav-item" href="/donate" css={donateButton}>
-                <Link href="/donate">
+                </MDBNavbarLink>
+              </MDBNavbarItem>
+              <MDBNavbarItem>
+                <MDBNavbarLink href="/donate">
                   <a
                     className={`nav-link ${
                       router?.pathname === '/donate' ? 'active' : ''
@@ -115,15 +126,17 @@ export default function Navigation() {
                   >
                     {t('common.donate')}
                   </a>
-                </Link>
-              </li>
-              <li>
-                <LocaleSwitcher />{' '}
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+                </MDBNavbarLink>
+              </MDBNavbarItem>
+            </MDBNavbarNav>
+
+            <div className="navbar-text">
+              {' '}
+              <LocaleSwitcher />{' '}
+            </div>
+          </MDBCollapse>
+        </MDBContainer>
+      </MDBNavbar>
     </header>
   );
 }
