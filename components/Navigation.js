@@ -11,8 +11,9 @@ import {
   MDBNavbarToggler,
 } from 'mdb-react-ui-kit';
 import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import LocaleSwitcher from './locale-switcher';
 
 const navbar = css`
@@ -58,7 +59,13 @@ export default function Navigation() {
 
   return (
     <header>
-      <MDBNavbar expand="lg" fixed="top" role="navigation" css={navbar}>
+      <MDBNavbar
+        expand="lg"
+        fixed="top"
+        role="navigation"
+        css={navbar}
+        className="shadow-4-strong"
+      >
         <MDBContainer fluid>
           <MDBNavbarBrand href="/">
             <a
@@ -68,7 +75,7 @@ export default function Navigation() {
                 src="/imgs/logowhitelongform.png"
                 alt="Operation Iranian Renaissance Logo"
                 className="float-start"
-                height="40px"
+                height="50px"
               />
             </a>
           </MDBNavbarBrand>
@@ -85,7 +92,7 @@ export default function Navigation() {
           <MDBCollapse navbar show={showNavNoTogglerSecond}>
             <MDBNavbarNav className="mr-auto mb-2 mb-lg-0">
               <MDBNavbarItem>
-                <MDBNavbarLink href="/">
+                <Link href="/">
                   <a
                     className={`nav-link ${
                       router?.pathname === '/' ? 'active' : ''
@@ -93,10 +100,10 @@ export default function Navigation() {
                   >
                     {t('common.home')}
                   </a>
-                </MDBNavbarLink>
+                </Link>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                <MDBNavbarLink href="/mission">
+                <Link href="/mission">
                   <a
                     className={`nav-link ${
                       router?.pathname === '/mission' ? 'active' : ''
@@ -104,10 +111,10 @@ export default function Navigation() {
                   >
                     {t('common.mission')}
                   </a>
-                </MDBNavbarLink>
+                </Link>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                <MDBNavbarLink href="/projects">
+                <Link href="/projects">
                   <a
                     className={`nav-link ${
                       router?.pathname === '/projects' ? 'active' : ''
@@ -115,10 +122,10 @@ export default function Navigation() {
                   >
                     {t('common.projects')}
                   </a>
-                </MDBNavbarLink>
+                </Link>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                <MDBNavbarLink href="/donate">
+                <Link href="/donate">
                   <a
                     className={`nav-link ${
                       router?.pathname === '/donate' ? 'active' : ''
@@ -126,7 +133,7 @@ export default function Navigation() {
                   >
                     {t('common.donate')}
                   </a>
-                </MDBNavbarLink>
+                </Link>
               </MDBNavbarItem>
             </MDBNavbarNav>
 

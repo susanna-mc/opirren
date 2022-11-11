@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.css';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { css, Global } from '@emotion/react';
@@ -30,6 +29,11 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Global
         styles={css`
+          *,
+          *::before,
+          *::after {
+            box-sizing: border-box;
+          }
           body {
             background-color: #d8f3fa;
             margin: 0;

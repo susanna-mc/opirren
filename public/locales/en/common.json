@@ -1,1 +1,10 @@
-{"home":"Home","donate":"Donate","follow":"Follow OpIrRen:","mission":"Mission","persian":"فارسی","projects":"Projects"}
+{
+  "common": {
+    "home": "Home",
+    "donate": "Donate",
+    "follow": "Follow OpIrRen:",
+    "mission": "Mission",
+    "persian": "فارسی",
+    "projects": "Projects"
+  }
+}

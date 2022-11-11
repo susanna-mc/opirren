@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { MDBBtn, MDBContainer, MDBFooter, MDBIcon } from 'mdb-react-ui-kit';
 import { useTranslation } from 'next-i18next';
 
 const footerStyles = css`
@@ -8,23 +9,50 @@ const footerStyles = css`
 export default function Footer() {
   const { t } = useTranslation('');
   return (
-    <div>
-      <footer
-        css={footerStyles}
-        id="sticky-footer"
-        className="flex-shrink-0 py-4 bg-dark text-white-50 position-sticky"
+    <MDBFooter
+      fixed="bottom"
+      className="text-center text-white "
+      css={footerStyles}
+    >
+      <MDBContainer className="p-4 pb-0">
+        <section className="mb-4">
+          <MDBBtn
+            floating
+            className="m-1"
+            style={{ backgroundColor: '#0088cc' }}
+            href="#!"
+            role="button"
+          >
+            <MDBIcon fab icon="telegram-plane" />
+          </MDBBtn>
+          <MDBBtn
+            floating
+            className="m-1"
+            style={{ backgroundColor: '#ac2bac' }}
+            href="#!"
+            role="button"
+          >
+            <MDBIcon fab icon="instagram" />
+          </MDBBtn>
+          <MDBBtn
+            floating
+            className="m-1"
+            style={{ backgroundColor: '#55acee' }}
+            href="#!"
+            role="button"
+          >
+            <MDBIcon fab icon="twitter" />
+          </MDBBtn>
+        </section>
+      </MDBContainer>
+
+      <div
+        className="text-center p-3"
+        style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}
       >
-        <div className="container text-center">
-          <p className="lead text-white-50">
-            {t('common.follow')}
-            <img src="/imgs/icons8-twitter-circled.svg" alt="PLACEHOLDER" />
-            <img src="/imgs/icons8-instagram.svg" alt="PLACEHOLDER" />
-            <img src="/imgs/icons8-telegram-app.svg" alt="PLACEHOLDER" />
-          </p>
-          <small>Copyright &copy; Operation Iranian Renaissance</small>
-        </div>
-      </footer>
-    </div>
+        Copyright &copy; Operation Iranian Renaissance
+      </div>
+    </MDBFooter>
   );
 }
 
