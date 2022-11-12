@@ -27,13 +27,34 @@ const projectSection = css`
   }
 `;
 
-const infobox = css`
+// const infoBoxes = css`
+//   margin: auto;
+
+//   flex-direction: column;
+//   a {
+//     color: #fff;
+//   }
+//   a:hover {
+//     color: #f6b91c;
+//   }
+
+// const infoSection = css`
+//   display: flex;
+//   background-color: #2c8bac;
+//   flex-direction: row;
+//   padding: 20px 20px;
+// `;
+
+const infoSection = css`
+  background-color: #2c8bac;
+
   a {
     color: #fff;
   }
 
   a:hover {
     color: #f6b91c;
+    transition: 350ms ease;
   }
 `;
 
@@ -140,69 +161,106 @@ export default function Test() {
           </MDBRow>
         </MDBContainer>
       </section>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      BREAK
-      <MDBContainer fluid>
-        <MDBRow>
-          <MDBCol className="col-lg-4 col-sm-6 mb-4">
-            <div className="bg-image hover-shadow " css={infobox}>
-              <img
-                src="/imgs/missionImage.png"
-                className="img-fluid "
-                alt="placeholder"
-              />
-              <a href="#!">
+
+      <section className="mt-5" css={infoSection}>
+        <MDBContainer>
+          <MDBRow>
+            <MDBCol className="col-lg-4 col-sm-6 mt-4 mb-4">
+              <div className="bg-image rounded-6">
+                <img src="/imgs/missionImage.png" className="w-100" alt="" />
+
                 <div
                   className="mask"
-                  style={{ backgroundColor: 'rgba(0, 0, 0, 0)' }}
+                  style={{
+                    background: 'linear-gradient(to top, black, #0000)',
+                  }}
                 >
-                  <div className="d-flex justify-content-center align-items-center h-100  ">
-                    <h2 className=" mb-0">{t('index:mission')} </h2>
-
-                    <span className="   mb-0">
-                      {t('index:mission_subheading')}
-                    </span>
-                  </div>
-                </div>
-                <div className="hover-overlay">
-                  <div
-                    className="mask"
-                    style={{ backgroundColor: 'rgba(0, 0, 0, 0.4)' }}
-                  />
-                </div>
-              </a>
-            </div>
-            BREAK
-            <div
-              className="p-5 text-center bg-image"
-              style={{
-                backgroundImage: 'url(/imgs/missionImage.png)',
-                height: '400px',
-              }}
-            >
-              <div
-                className="mask"
-                style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}
-              >
-                <div className="d-flex justify-content-center align-items-center h-100">
-                  <div className="text-white">
-                    <h1 className="mb-3">Heading</h1>
-                    <h4 className="mb-3">Subheading</h4>
-                    <MDBBtn tag="a" outline size="lg">
-                      Call to action
-                    </MDBBtn>
+                  <div className=" bottom-0 d-flex align-items-end h-100 text-center justify-content-center ">
+                    <div className="mb-3">
+                      <a className=" stretched-link" href="/mission#mission">
+                        <h1
+                          className="fw-normal mb-2 "
+                          style={{ fontSize: '3vw' }}
+                        >
+                          {t('index:mission')}
+                        </h1>
+                        <h4
+                          className="  mb-4 fw-lighter"
+                          style={{ fontSize: '2vw' }}
+                        >
+                          {t('index:mission_subheading')}
+                        </h4>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </MDBCol>
-        </MDBRow>
-      </MDBContainer>
+            </MDBCol>
+            <MDBCol className="col-lg-4 col-sm-6 mt-4 mb-4">
+              <div className="bg-image rounded-6">
+                <img src="/imgs/futureImage.png" className="w-100" alt="" />
+
+                <div
+                  className="mask"
+                  style={{
+                    background: 'linear-gradient(to top, black, #0000)',
+                  }}
+                >
+                  <div className=" bottom-0 d-flex align-items-end h-100 text-center justify-content-center">
+                    <div className="mb-3">
+                      <a className=" stretched-link" href="/projects">
+                        <h1
+                          className="fw-normal  mb-2"
+                          style={{ fontSize: '3vw' }}
+                        >
+                          {t('index:future_projects')}
+                        </h1>
+                        <h4
+                          className="  mb-4 fw-lighter"
+                          style={{ fontSize: '2vw' }}
+                        >
+                          {t('index:future_projects_subheading')}
+                        </h4>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </MDBCol>
+            <MDBCol className="col-lg-4 col-sm-6 mt-4 mb-4">
+              <div className="bg-image rounded-6">
+                <img src="/imgs/valuesImage.png" className="w-100" alt="" />
+
+                <div
+                  className="mask"
+                  style={{
+                    background: 'linear-gradient(to top, black, #0000)',
+                  }}
+                >
+                  <div className=" bottom-0 d-flex align-items-end h-100 text-center justify-content-center">
+                    <div className="mb-3">
+                      <a className=" stretched-link" href="/mission#values">
+                        <h1
+                          className="fw-normal  mb-2"
+                          style={{ fontSize: '3vw' }}
+                        >
+                          {t('index:values')}
+                        </h1>
+                        <h4
+                          className="  mb-4 fw-lighter"
+                          style={{ fontSize: '2vw' }}
+                        >
+                          {t('index:values_subheading')}
+                        </h4>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
+      </section>
     </div>
   );
 }

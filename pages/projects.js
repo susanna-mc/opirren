@@ -22,6 +22,7 @@ const projectSection = css`
 
   a:hover {
     color: #2c8bac;
+    transition: 350ms ease;
   }
 `;
 
@@ -139,7 +140,7 @@ export default function Projects() {
             <MDBCol md="6" className="mb-md-0 p-md-4">
               <div className="bg-image hover-zoom">
                 <img
-                  src="/imgs/future-projects-test.png"
+                  src="/imgs/futureprojects.jpg"
                   className="w-100"
                   alt="..."
                 />

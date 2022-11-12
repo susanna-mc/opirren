@@ -1,11 +1,9 @@
 import {
-  MDBBtn,
   MDBCard,
   MDBCardBody,
+  MDBCardImage,
   MDBCol,
   MDBContainer,
-  MDBIcon,
-  MDBInput,
   MDBRow,
 } from 'mdb-react-ui-kit';
 import { useTranslation } from 'next-i18next';
@@ -28,54 +26,21 @@ export default function Donate() {
           <MDBRow className="d-flex justify-content-center align-items-center py-5">
             <MDBCol md="7" lg="5" xl="4">
               <MDBCard style={{ borderRadius: '15px' }}>
+                <MDBCardImage
+                  src="/imgs/finalizedlogo.png"
+                  class="card-img-top"
+                  alt="Black Chair"
+                ></MDBCardImage>
                 <MDBCardBody className="p-4">
                   <MDBRow className="d-flex align-items-center">
-                    <MDBCol size="9">
-                      <MDBInput
-                        label="Card Number"
-                        id="form1"
-                        type="text"
-                        placeholder="1234 5678 9012 3457"
-                      />
-                    </MDBCol>
-                    <MDBCol size="3">
-                      <img
-                        src="https://img.icons8.com/color/48/000000/visa.png"
-                        alt="visa"
-                        width="64px"
-                      />
-                    </MDBCol>
-
-                    <MDBCol size="9">
-                      <MDBInput
-                        label="Cardholder's Name"
-                        id="form2"
-                        type="text"
-                        placeholder="Cardholder's Name"
-                      />
-                    </MDBCol>
-
-                    <MDBCol size="6 mt-3">
-                      <MDBInput
-                        label="Expiration"
-                        id="form2"
-                        type="text"
-                        placeholder="MM/YYYY"
-                      />
-                    </MDBCol>
-                    <MDBCol size="3 mt-3">
-                      <MDBInput
-                        label="CVV"
-                        id="form2"
-                        type="text"
-                        placeholder="&#9679;&#9679;&#9679;"
-                      />
-                    </MDBCol>
-                    <MDBCol size="3">
-                      <MDBBtn color="info" rounded size="lg">
-                        <MDBIcon fas icon="arrow-right" />
-                      </MDBBtn>
-                    </MDBCol>
+                    <MDBCol></MDBCol>
+                    <h1> DONATION VERBIAGE </h1>
+                    <a
+                      className="btn btn-lg stretched-link mt-4"
+                      href="https://donate.stripe.com/test_5kAg206RN32m4kU288"
+                    >
+                      Donate <i className="fas fa-donate"></i>{' '}
+                    </a>
                   </MDBRow>
                 </MDBCardBody>
               </MDBCard>
