@@ -1,10 +1,7 @@
 import { css } from '@emotion/react';
-import styled from '@emotion/styled';
 import {
-  MDBBtn,
   MDBCard,
   MDBCardBody,
-  MDBCardImage,
   MDBCardText,
   MDBCol,
   MDBContainer,
@@ -25,127 +22,24 @@ const projectSection = css`
 
   a:hover {
     color: #2c8bac;
+    transition: 350ms ease;
   }
 `;
 
+// INFO BOXES
+
 const infoSection = css`
-  display: flex;
   background-color: #2c8bac;
-  flex-direction: row;
   padding: 20px 20px;
-`;
-
-const infoBoxes = css`
-  margin: auto;
-
-  flex-direction: column;
   a {
     color: #fff;
   }
+
   a:hover {
     color: #f6b91c;
+    transition: 350ms ease;
   }
 `;
-// INFO BOXES
-const DisplayOver = styled.div({
-  height: '100%',
-  left: '0',
-  position: 'absolute',
-  top: '0',
-  width: '100%',
-  zIndex: 2,
-  transition: 'background-color 350ms ease',
-  backgroundColor: 'transparent',
-  padding: '20px 20px 0 20px',
-  boxSizing: 'border-box',
-});
-
-const BigTitle = styled.h2({
-  textTransform: 'uppercase',
-
-  position: 'absolute',
-  bottom: '60px',
-});
-
-const Hover = styled.div({
-  opacity: 0,
-  transition: 'opacity 350ms ease',
-});
-
-const Paragraph = styled.p({
-  transform: 'translate3d(0,50px,0)',
-  transition: 'transform 350ms ease',
-  position: 'absolute',
-  bottom: '5px',
-  textAlign: 'center',
-});
-
-const styleda = styled.a({
-  color: '#fff',
-});
-
-const MissionInfobox = styled.div({
-  backgroundSize: 'contain',
-  backgroundRepeat: 'no-repeat',
-  color: '#FFF',
-  position: 'relative',
-  width: '350px',
-  height: '350px',
-  cursor: 'pointer',
-  backgroundImage: 'url(/imgs/missionImage.png)',
-
-  [`:hover ${DisplayOver}`]: {
-    backgroundColor: 'rgba(0,0,0,.5)',
-  },
-  [` :hover ${Paragraph}`]: {
-    transform: 'translate3d(0,0,0)',
-  },
-  [`:hover ${Hover}`]: {
-    opacity: 1,
-  },
-});
-
-const ProjectInfobox = styled.div({
-  backgroundSize: 'contain',
-  backgroundRepeat: 'no-repeat',
-  color: '#FFF',
-  position: 'relative',
-  width: '350px',
-  height: '350px',
-  cursor: 'pointer',
-  backgroundImage: 'url(/imgs/futureImage.png)',
-
-  [`:hover ${DisplayOver}`]: {
-    backgroundColor: 'rgba(0,0,0,.5)',
-  },
-  [` :hover ${Paragraph}`]: {
-    transform: 'translate3d(0,0,0)',
-  },
-  [`:hover ${Hover}`]: {
-    opacity: 1,
-  },
-});
-
-const ValuesInfobox = styled.div({
-  backgroundSize: 'contain',
-  backgroundRepeat: 'no-repeat',
-  color: '#FFF',
-  position: 'relative',
-  width: '350px',
-  height: '350px',
-  cursor: 'pointer',
-  backgroundImage: 'url(/imgs/valuesImage.png)',
-
-  [`:hover ${DisplayOver}`]: {
-    backgroundColor: 'rgba(0,0,0,.5)',
-  },
-  [` :hover ${Paragraph}`]: {
-    transform: 'translate3d(0,0,0)',
-  },
-  [`:hover ${Hover}`]: {
-    opacity: 1,
-  },
-});
 
 export default function Home() {
   const { t } = useTranslation('');
@@ -258,63 +152,106 @@ export default function Home() {
           </MDBContainer>
         </section>
 
-        <section css={infoSection}>
-          <div className="container">
-            <div className=" row m-5">
-              <MissionInfobox
-                className="col-lg-4 col-sm-6 mb-4 "
-                css={infoBoxes}
-              >
-                <Link href="/mission#mission">
-                  <a>
-                    <DisplayOver>
-                      <BigTitle>{t('index:mission')}</BigTitle>
-                      <Hover>
-                        <Paragraph>{t('index:mission_subheading')}</Paragraph>
-                      </Hover>
-                    </DisplayOver>
-                  </a>
-                </Link>
-              </MissionInfobox>
+        <section className="mt-5" css={infoSection}>
+          <MDBContainer>
+            <MDBRow>
+              <MDBCol className="col-lg-4 col-sm-6 mt-4 mb-4">
+                <div className="bg-image rounded-6 hover-shadow">
+                  <img src="/imgs/missionImage.png" className="w-100 " alt="" />
 
-              <ProjectInfobox
-                className="col-lg-4 col-sm-6 mb-4 "
-                css={infoBoxes}
-              >
-                <Link href="/projects">
-                  <a>
-                    <DisplayOver>
-                      <BigTitle>{t('index:future_projects')}</BigTitle>
-                      <Hover>
-                        <Paragraph>
-                          {t('index:future_projects_subheading')}
-                        </Paragraph>
-                      </Hover>
-                    </DisplayOver>
-                  </a>
-                </Link>
-              </ProjectInfobox>
+                  <div
+                    className="mask"
+                    style={{
+                      background: 'linear-gradient(to top, black, #0000)',
+                    }}
+                  >
+                    <div className=" bottom-0 d-flex align-items-end h-100 text-center justify-content-center ">
+                      <div className="mb-3">
+                        <a className=" stretched-link" href="/mission#mission">
+                          <h1
+                            className="fw-normal mb-2 "
+                            style={{ fontSize: '3vw' }}
+                          >
+                            {t('index:mission')}
+                          </h1>
+                          <h4
+                            className="  mb-4 fw-lighter"
+                            style={{ fontSize: '2vw' }}
+                          >
+                            {t('index:mission_subheading')}
+                          </h4>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </MDBCol>
+              <MDBCol className="col-lg-4 col-sm-6 mt-4 mb-4">
+                <div className="bg-image rounded-6">
+                  <img src="/imgs/futureImage.png" className="w-100" alt="" />
 
-              <ValuesInfobox
-                className="col-lg-4 col-sm-6 mb-4 "
-                css={infoBoxes}
-              >
-                <Link href="/mission#values">
-                  <a>
-                    <DisplayOver>
-                      <BigTitle>{t('index:values')}</BigTitle>
-                      <Hover>
-                        <Paragraph>{t('index:values_subheading')}</Paragraph>
-                      </Hover>
-                    </DisplayOver>
-                  </a>
-                </Link>
-              </ValuesInfobox>
-            </div>
-          </div>
+                  <div
+                    className="mask"
+                    style={{
+                      background: 'linear-gradient(to top, black, #0000)',
+                    }}
+                  >
+                    <div className=" bottom-0 d-flex align-items-end h-100 text-center justify-content-center">
+                      <div className="mb-3">
+                        <a className=" stretched-link" href="/projects">
+                          <h1
+                            className="fw-normal  mb-2"
+                            style={{ fontSize: '3vw' }}
+                          >
+                            {t('index:future_projects')}
+                          </h1>
+                          <h4
+                            className="  mb-4 fw-lighter"
+                            style={{ fontSize: '2vw' }}
+                          >
+                            {t('index:future_projects_subheading')}
+                          </h4>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </MDBCol>
+              <MDBCol className="col-lg-4 col-sm-6 mt-4 mb-4">
+                <div className="bg-image rounded-6">
+                  <img src="/imgs/valuesImage.png" className="w-100" alt="" />
+
+                  <div
+                    className="mask"
+                    style={{
+                      background: 'linear-gradient(to top, black, #0000)',
+                    }}
+                  >
+                    <div className=" bottom-0 d-flex align-items-end h-100 text-center justify-content-center">
+                      <div className="mb-3">
+                        <a className=" stretched-link" href="/mission#values">
+                          <h1
+                            className="fw-normal  mb-2"
+                            style={{ fontSize: '3vw' }}
+                          >
+                            {t('index:values')}
+                          </h1>
+                          <h4
+                            className="  mb-4 fw-lighter"
+                            style={{ fontSize: '2vw' }}
+                          >
+                            {t('index:values_subheading')}
+                          </h4>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </MDBCol>
+            </MDBRow>
+          </MDBContainer>
         </section>
       </main>
-
       <Footer />
     </div>
   );

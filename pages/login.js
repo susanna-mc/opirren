@@ -1,14 +1,4 @@
-import {
-  MDBBtn,
-  MDBCard,
-  MDBCardBody,
-  MDBCardImage,
-  MDBCardText,
-  MDBCol,
-  MDBContainer,
-  MDBRow,
-  MDBTypography,
-} from 'mdb-react-ui-kit';
+import { MDBCard, MDBCardBody } from 'mdb-react-ui-kit';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Navigation from '../components/Navigation';

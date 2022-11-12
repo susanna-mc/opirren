@@ -1,4 +1,3 @@
-import { css } from '@emotion/react';
 import {
   MDBCard,
   MDBCardBody,
@@ -13,28 +12,9 @@ import Head from 'next/head';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 
-const heroBackground = css`
-  position: absolute;
-  height: auto;
-
-  img:nth-child(1) {
-    border-radius: 0 50% 0 0;
-    float: left;
-  }
-`;
-
 export default function Mission() {
   const { t } = useTranslation('');
-  // const divStyle = {
-  //   height: '100%',
-  //   width: '100%',
-  //   // width: '100vw',
-  //   // height: '100vh',
-  //   backgroundImage: `url(/imgs/iranborders.png)`,
-  //   backgroundSize: 'cover',
-  //   backgroundPosition: 'center',
-  //   backgroundRepeat: 'no-repeat',
-  // };
+
   return (
     <div>
       <Head>
@@ -60,7 +40,7 @@ export default function Mission() {
               <MDBCol md="6" className="mb-md-0 p-md-4 mt-5 ">
                 <div className="bg-image img-fluid hover-zoom shadow-4-strong ">
                   <img
-                    src="/imgs/missiontest1.png"
+                    src="/imgs/mission1stimage.jpg"
                     className="w-100  "
                     alt="..."
                   />{' '}
@@ -69,12 +49,19 @@ export default function Mission() {
               <MDBCol md="6" className="p-4 ps-md-0 mt-5">
                 <MDBCard>
                   <MDBCardBody>
-                    <h2 id="mission">
+                    <h2
+                      id="mission"
+                      className=" display-4 text-decoration-underline"
+                    >
                       {t('mission:mission_statement_heading')}
                     </h2>
-                    <h3>{t('mission:mission_statement_domestic')}</h3>
+                    <h3 className=" display-6">
+                      {t('mission:mission_statement_domestic')}
+                    </h3>
                     <p>{t('mission:mission_statement_domestic_subheading')}</p>
-                    <h3>{t('mission:mission_statement_international')}</h3>
+                    <h3 className=" display-6">
+                      {t('mission:mission_statement_international')}
+                    </h3>
                     <p>
                       {t('mission:mission_statement_international_subheading')}
                     </p>
@@ -88,7 +75,9 @@ export default function Mission() {
               <MDBCol md="6" className="p-4 mt-5 ">
                 <MDBCard>
                   <MDBCardBody>
-                    <h2>{t('mission:values_statement_heading')}</h2>
+                    <h1 className=" display-4  text-decoration-underline">
+                      {t('mission:values_statement_heading')}
+                    </h1>
                     <p>{t('mission:values_statement_subheading')} </p>
                     <ul>
                       <li>{t('mission:values_democracy')}</li>
@@ -103,7 +92,7 @@ export default function Mission() {
               <MDBCol md="6" className="mb-md-0 p-md-4 mt-5">
                 <div className="bg-image img-fluid hover-zoom shadow-4-strong">
                   <img
-                    src="/imgs/valuespagetest.png"
+                    src="/imgs/missionvalues.jpg"
                     className="w-100 "
                     alt="..."
                   />{' '}
