@@ -12,6 +12,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@fortawesome/fontawesome-free": "^6.2.0",
+    "i18next": "^22.0.5",
     "i18nexus-cli": "^3.1.0",
     "mdb-react-ui-kit": "^5.0.0",
     "next": "12.3.1",
@@ -33,7 +34,7 @@
     "@types/react-dom": "18.0.6",
     "@typescript-eslint/eslint-plugin": "5.40.0",
     "@typescript-eslint/parser": "5.40.0",
-    "@upleveled/eslint-config-upleveled": "^3.0.1",
+    "@upleveled/eslint-config-upleveled": "^3.3.9",
     "@upleveled/eslint-plugin-upleveled": "2.1.6",
     "eslint": "8.25.0",
     "eslint-config-next": "12.3.1",

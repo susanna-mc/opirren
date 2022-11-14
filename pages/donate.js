@@ -28,18 +28,18 @@ export default function Donate() {
               <MDBCard style={{ borderRadius: '15px' }}>
                 <MDBCardImage
                   src="/imgs/finalizedlogo.png"
-                  class="card-img-top"
-                  alt="Black Chair"
-                ></MDBCardImage>
+                  className="card-img-top "
+                  alt="Operation Iranian Renaissance abbreviated logo"
+                />
                 <MDBCardBody className="p-4">
                   <MDBRow className="d-flex align-items-center">
-                    <MDBCol></MDBCol>
                     <h1> DONATION VERBIAGE </h1>
                     <a
-                      className="btn btn-lg stretched-link mt-4"
+                      className="btn btn-lg stretched-link mt-4 text-white"
                       href="https://donate.stripe.com/test_5kAg206RN32m4kU288"
+                      style={{ backgroundColor: '#2c8bac' }}
                     >
-                      Donate <i className="fas fa-donate"></i>{' '}
+                      Donate <i className="fas fa-donate" />{' '}
                     </a>
                   </MDBRow>
                 </MDBCardBody>

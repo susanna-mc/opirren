@@ -50,8 +50,8 @@ export default function Navigation() {
   const { t } = useTranslation('');
   const [showNavNoTogglerSecond, setShowNavNoTogglerSecond] = useState(false);
   useEffect(() => {
-    let dir = router.locale == 'fa' ? 'rtl' : 'ltr';
-    let lang = router.locale == 'fa' ? 'fa' : 'en';
+    const dir = router.locale === 'fa' ? 'rtl' : 'ltr';
+    const lang = router.locale === 'fa' ? 'fa' : 'en';
     document.querySelector('html').setAttribute('dir', dir);
     document.querySelector('html').setAttribute('lang', lang);
   }, [router.locale]);
@@ -66,17 +66,21 @@ export default function Navigation() {
         className="shadow-4-strong"
       >
         <MDBContainer fluid>
-          <MDBNavbarBrand href="/">
-            <a
-              className={`nav-link ${router?.pathname === '/' ? 'active' : ''}`}
-            >
-              <img
-                src="/imgs/logowhitelongform.png"
-                alt="Operation Iranian Renaissance Logo"
-                className="float-start"
-                height="50px"
-              />
-            </a>
+          <MDBNavbarBrand>
+            <Link href="/">
+              <a
+                className={`nav-link ${
+                  router.pathname === '/' ? 'active' : ''
+                }`}
+              >
+                <img
+                  src="/imgs/logowhitelongform.png"
+                  alt="Operation Iranian Renaissance Logo"
+                  className="float-start"
+                  height="50px"
+                />
+              </a>
+            </Link>
           </MDBNavbarBrand>
           <MDBNavbarToggler
             type="button"
@@ -94,7 +98,7 @@ export default function Navigation() {
                 <Link href="/">
                   <a
                     className={`nav-link ${
-                      router?.pathname === '/' ? 'active' : ''
+                      router.pathname === '/' ? 'active' : ''
                     }`}
                   >
                     {t('common.home')}
@@ -105,7 +109,7 @@ export default function Navigation() {
                 <Link href="/mission">
                   <a
                     className={`nav-link ${
-                      router?.pathname === '/mission' ? 'active' : ''
+                      router.pathname === '/mission' ? 'active' : ''
                     }`}
                   >
                     {t('common.mission')}
@@ -116,7 +120,7 @@ export default function Navigation() {
                 <Link href="/projects">
                   <a
                     className={`nav-link ${
-                      router?.pathname === '/projects' ? 'active' : ''
+                      router.pathname === '/projects' ? 'active' : ''
                     }`}
                   >
                     {t('common.projects')}
@@ -127,7 +131,7 @@ export default function Navigation() {
                 <Link href="/donate">
                   <a
                     className={`nav-link ${
-                      router?.pathname === '/donate' ? 'active' : ''
+                      router.pathname === '/donate' ? 'active' : ''
                     }`}
                   >
                     {t('common.donate')}

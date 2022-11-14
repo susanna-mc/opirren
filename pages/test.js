@@ -1,10 +1,7 @@
 import { css } from '@emotion/react';
 import {
-  MDBBtn,
   MDBCard,
   MDBCardBody,
-  MDBCardImage,
-  MDBCardLink,
   MDBCardText,
   MDBCol,
   MDBContainer,
@@ -14,7 +11,6 @@ import {
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Link from 'next/link';
-import React from 'react';
 import Navigation from '../components/Navigation';
 
 const projectSection = css`
