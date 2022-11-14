@@ -1,13 +1,11 @@
 import { css } from '@emotion/react';
 import { MDBBtn, MDBContainer, MDBFooter, MDBIcon } from 'mdb-react-ui-kit';
-import { useTranslation } from 'next-i18next';
 
 const footerStyles = css`
   background-color: #02282f;
 `;
 
 export default function Footer() {
-  const { t } = useTranslation('');
   return (
     <MDBFooter
       fixed="bottom"
@@ -54,12 +52,4 @@ export default function Footer() {
       </div>
     </MDBFooter>
   );
-}
-
-export async function getStaticProps({ locale }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-  };
 }

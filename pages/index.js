@@ -26,8 +26,6 @@ const projectSection = css`
   }
 `;
 
-// INFO BOXES
-
 const infoSection = css`
   background-color: #2c8bac;
   padding: 20px 20px;
@@ -167,27 +165,29 @@ export default function Home() {
                   >
                     <div className=" bottom-0 d-flex align-items-end h-100 text-center justify-content-center ">
                       <div className="mb-3">
-                        <a className=" stretched-link" href="/mission#mission">
-                          <h1
-                            className="fw-normal mb-2 "
-                            style={{ fontSize: '3vw' }}
-                          >
-                            {t('index:mission')}
-                          </h1>
-                          <h4
-                            className="  mb-4 fw-lighter"
-                            style={{ fontSize: '2vw' }}
-                          >
-                            {t('index:mission_subheading')}
-                          </h4>
-                        </a>
+                        <Link href="/mission#mission">
+                          <a className=" stretched-link">
+                            <h1
+                              className="fw-normal mb-2 "
+                              style={{ fontSize: '3vw' }}
+                            >
+                              {t('index:mission')}
+                            </h1>
+                            <h4
+                              className="  mb-4 fw-lighter"
+                              style={{ fontSize: '2vw' }}
+                            >
+                              {t('index:mission_subheading')}
+                            </h4>
+                          </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
                 </div>
               </MDBCol>
               <MDBCol className="col-lg-4 col-sm-6 mt-4 mb-4">
-                <div className="bg-image rounded-6">
+                <div className="bg-image rounded-6 hover-shadow">
                   <img src="/imgs/futureImage.png" className="w-100" alt="" />
 
                   <div
@@ -198,27 +198,29 @@ export default function Home() {
                   >
                     <div className=" bottom-0 d-flex align-items-end h-100 text-center justify-content-center">
                       <div className="mb-3">
-                        <a className=" stretched-link" href="/projects">
-                          <h1
-                            className="fw-normal  mb-2"
-                            style={{ fontSize: '3vw' }}
-                          >
-                            {t('index:future_projects')}
-                          </h1>
-                          <h4
-                            className="  mb-4 fw-lighter"
-                            style={{ fontSize: '2vw' }}
-                          >
-                            {t('index:future_projects_subheading')}
-                          </h4>
-                        </a>
+                        <Link href="/projects">
+                          <a className=" stretched-link">
+                            <h1
+                              className="fw-normal  mb-2"
+                              style={{ fontSize: '3vw' }}
+                            >
+                              {t('index:future_projects')}
+                            </h1>
+                            <h4
+                              className="  mb-4 fw-lighter"
+                              style={{ fontSize: '2vw' }}
+                            >
+                              {t('index:future_projects_subheading')}
+                            </h4>
+                          </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
                 </div>
               </MDBCol>
               <MDBCol className="col-lg-4 col-sm-6 mt-4 mb-4">
-                <div className="bg-image rounded-6">
+                <div className="bg-image rounded-6 hover-shadow">
                   <img src="/imgs/valuesImage.png" className="w-100" alt="" />
 
                   <div
@@ -229,20 +231,22 @@ export default function Home() {
                   >
                     <div className=" bottom-0 d-flex align-items-end h-100 text-center justify-content-center">
                       <div className="mb-3">
-                        <a className=" stretched-link" href="/mission#values">
-                          <h1
-                            className="fw-normal  mb-2"
-                            style={{ fontSize: '3vw' }}
-                          >
-                            {t('index:values')}
-                          </h1>
-                          <h4
-                            className="  mb-4 fw-lighter"
-                            style={{ fontSize: '2vw' }}
-                          >
-                            {t('index:values_subheading')}
-                          </h4>
-                        </a>
+                        <Link href="/mission#values">
+                          <a className=" stretched-link">
+                            <h1
+                              className="fw-normal  mb-2"
+                              style={{ fontSize: '3vw' }}
+                            >
+                              {t('index:values')}
+                            </h1>
+                            <h4
+                              className="  mb-4 fw-lighter"
+                              style={{ fontSize: '2vw' }}
+                            >
+                              {t('index:values_subheading')}
+                            </h4>
+                          </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -257,7 +261,7 @@ export default function Home() {
   );
 }
 
-export async function getStaticProps({ locale }) {
+export async function getServerSideProps({ locale }) {
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common', 'index'])),
