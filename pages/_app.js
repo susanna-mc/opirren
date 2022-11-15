@@ -10,10 +10,13 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* favicon section */}
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/icon-apple-touch.png" />
         <link rel="manifest" href="/manifest.json" />
+        {/* favicon section */}
       </Head>
       <Global
         styles={css`

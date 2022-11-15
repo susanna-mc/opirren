@@ -57,18 +57,19 @@ export default function Navigation() {
   }, [router.locale]);
 
   return (
-    <header>
-      <MDBNavbar
-        expand="lg"
-        fixed="top"
-        role="navigation"
-        css={navbar}
-        className="shadow-4-strong"
-      >
-        <MDBContainer fluid>
-          <MDBNavbarBrand>
-            <Link href="/">
-              <a
+    <div>
+      <header>
+        <MDBNavbar
+          expand="lg"
+          fixed="top"
+          role="navigation"
+          css={navbar}
+          className="shadow-4-strong"
+        >
+          <MDBContainer fluid>
+            <MDBNavbarBrand>
+              <Link
+                href="/"
                 className={`nav-link ${
                   router.pathname === '/' ? 'active' : ''
                 }`}
@@ -79,74 +80,74 @@ export default function Navigation() {
                   className="float-start"
                   height="50px"
                 />
-              </a>
-            </Link>
-          </MDBNavbarBrand>
-          <MDBNavbarToggler
-            type="button"
-            data-target="#navbarTogglerDemo02"
-            aria-controls="navbarTogglerDemo02"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-            onClick={() => setShowNavNoTogglerSecond(!showNavNoTogglerSecond)}
-          >
-            <MDBIcon style={{ color: '#f6b91c' }} icon="bars" fas />
-          </MDBNavbarToggler>
-          <MDBCollapse navbar show={showNavNoTogglerSecond}>
-            <MDBNavbarNav className="mr-auto mb-2 mb-lg-0">
-              <MDBNavbarItem>
-                <Link href="/">
-                  <a
-                    className={`nav-link ${
-                      router.pathname === '/' ? 'active' : ''
-                    }`}
-                  >
-                    {t('common.home')}
-                  </a>
-                </Link>
-              </MDBNavbarItem>
-              <MDBNavbarItem>
-                <Link href="/mission">
-                  <a
-                    className={`nav-link ${
-                      router.pathname === '/mission' ? 'active' : ''
-                    }`}
-                  >
-                    {t('common.mission')}
-                  </a>
-                </Link>
-              </MDBNavbarItem>
-              <MDBNavbarItem>
-                <Link href="/projects">
-                  <a
-                    className={`nav-link ${
-                      router.pathname === '/projects' ? 'active' : ''
-                    }`}
-                  >
-                    {t('common.projects')}
-                  </a>
-                </Link>
-              </MDBNavbarItem>
-              <MDBNavbarItem>
-                <Link href="/donate">
-                  <a
-                    className={`nav-link ${
-                      router.pathname === '/donate' ? 'active' : ''
-                    }`}
-                  >
-                    {t('common.donate')}
-                  </a>
-                </Link>
-              </MDBNavbarItem>
-            </MDBNavbarNav>
+              </Link>
+            </MDBNavbarBrand>
+            <MDBNavbarToggler
+              type="button"
+              data-target="#navbarTogglerDemo02"
+              aria-controls="navbarTogglerDemo02"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              onClick={() => setShowNavNoTogglerSecond(!showNavNoTogglerSecond)}
+            >
+              <MDBIcon style={{ color: '#f6b91c' }} icon="bars" fas />
+            </MDBNavbarToggler>
+            <MDBCollapse navbar show={showNavNoTogglerSecond}>
+              <MDBNavbarNav className="mr-auto mb-2 mb-lg-0">
+                <MDBNavbarItem>
+                  <Link href="/">
+                    <a
+                      className={`nav-link ${
+                        router.pathname === '/' ? 'active' : ''
+                      }`}
+                    >
+                      {t('common.home')}
+                    </a>
+                  </Link>
+                </MDBNavbarItem>
+                <MDBNavbarItem>
+                  <Link href="/mission">
+                    <a
+                      className={`nav-link ${
+                        router.pathname === '/mission' ? 'active' : ''
+                      }`}
+                    >
+                      {t('common.mission')}
+                    </a>
+                  </Link>
+                </MDBNavbarItem>
+                <MDBNavbarItem>
+                  <Link href="/projects">
+                    <a
+                      className={`nav-link ${
+                        router.pathname === '/projects' ? 'active' : ''
+                      }`}
+                    >
+                      {t('common.projects')}
+                    </a>
+                  </Link>
+                </MDBNavbarItem>
+                <MDBNavbarItem>
+                  <Link href="/donate">
+                    <a
+                      className={`nav-link ${
+                        router.pathname === '/donate' ? 'active' : ''
+                      }`}
+                    >
+                      {t('common.donate')}
+                    </a>
+                  </Link>
+                </MDBNavbarItem>
+              </MDBNavbarNav>
 
-            <div className="navbar-text">
-              {' '}
-              <LocaleSwitcher />{' '}
-            </div>
-          </MDBCollapse>
-        </MDBContainer>
-      </MDBNavbar>
-    </header>
+              <div className="navbar-text">
+                {' '}
+                <LocaleSwitcher />{' '}
+              </div>
+            </MDBCollapse>
+          </MDBContainer>
+        </MDBNavbar>
+      </header>
+    </div>
   );
 }

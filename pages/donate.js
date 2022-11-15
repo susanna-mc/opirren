@@ -7,6 +7,7 @@ import {
   MDBRow,
 } from 'mdb-react-ui-kit';
 import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 
@@ -51,4 +52,12 @@ export default function Donate() {
       <Footer />
     </div>
   );
+}
+
+export async function getServerSideProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common', 'index'])),
+    },
+  };
 }

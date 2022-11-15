@@ -1,8 +1,8 @@
-import { css } from '@emotion/react';
 import {
   MDBCard,
   MDBCardBody,
   MDBCardText,
+  MDBCardTitle,
   MDBCol,
   MDBContainer,
   MDBRow,
@@ -11,20 +11,8 @@ import {
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
-import Link from 'next/link';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
-
-const projectSection = css`
-  a {
-    color: #505050;
-  }
-
-  a:hover {
-    color: #2c8bac;
-    transition: 350ms ease;
-  }
-`;
 
 export default function Projects() {
   const { t } = useTranslation('');
@@ -64,72 +52,113 @@ export default function Projects() {
           </div>
         </header>
 
-        <br />
-        <section css={projectSection}>
+        <section className="m-5">
           <MDBContainer>
             <MDBRow>
               <MDBCol className="col-lg-4 col-sm-6 mb-4">
                 <MDBCard className="h-100">
-                  <Link href=" https://bit.ly/3T1xaic">
-                    <a target="_blank">
-                      <div className="bg-image hover-zoom">
-                        <img
-                          src="/imgs/protestdisplaysquare.svg"
-                          className="w-100"
-                          alt="PLACEHOLDER"
-                        />
-                      </div>
+                  <div className="bg-image hover-zoom">
+                    <a
+                      href="https://bit.ly/3T1xaic"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <img
+                        src="/imgs/protestdisplaysquare.svg"
+                        className="w-100"
+                        alt="PLACEHOLDER"
+                      />
+                    </a>
+                  </div>
 
-                      <MDBCardBody>
-                        <MDBCardText>
-                          <h4> {t('index:protest_safely')}</h4>
-                          <p> {t('index:protest_safely_subheading')}</p>
-                        </MDBCardText>
-                      </MDBCardBody>
-                    </a>
-                  </Link>
+                  <MDBCardBody>
+                    <MDBCardTitle>{t('index:protest_safely')}</MDBCardTitle>
+                    <MDBCardText>
+                      {t('index:protest_safely_subheading')}
+                    </MDBCardText>
+                  </MDBCardBody>
+
+                  <a
+                    className="btn btn-lg text-white"
+                    href="https://bit.ly/3T1xaic"
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ backgroundColor: '#2c8bac' }}
+                  >
+                    {t('common:download_pdf')} <i className="fas fa-download" />
+                  </a>
                 </MDBCard>
               </MDBCol>
+
               <MDBCol className="col-lg-4 col-sm-6 mb-4">
                 <MDBCard className="h-100">
-                  <Link href="https://drive.google.com/drive/folders/1ktEu_SQK-KBShEkkRiG-Lzaj1PA-3JIM?usp=sharing">
-                    <a target="_blank">
-                      <div className="bg-image hover-zoom">
-                        <img
-                          src="/imgs/distributivematerials.svg"
-                          className="w-100"
-                          alt="PLACEHOLDER"
-                        />
-                      </div>
-                      <MDBCardBody>
-                        <MDBCardText>
-                          <h4> {t('index:social_media_assets')}</h4>
-                          <p> {t('index:social_media_assets_subheading')}</p>
-                        </MDBCardText>
-                      </MDBCardBody>
+                  <div className="bg-image hover-zoom">
+                    <a
+                      href="https://drive.google.com/drive/folders/1ktEu_SQK-KBShEkkRiG-Lzaj1PA-3JIM?usp=sharing"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <img
+                        src="/imgs/distributivematerials.svg"
+                        className="w-100"
+                        alt="PLACEHOLDER"
+                      />
                     </a>
-                  </Link>
+                  </div>
+
+                  <MDBCardBody>
+                    <MDBCardTitle>
+                      {t('index:social_media_assets')}
+                    </MDBCardTitle>
+                    <MDBCardText>
+                      {t('index:social_media_assets_subheading')}
+                    </MDBCardText>
+                  </MDBCardBody>
+
+                  <a
+                    className="btn btn-lg text-white"
+                    href="https://drive.google.com/drive/folders/1ktEu_SQK-KBShEkkRiG-Lzaj1PA-3JIM?usp=sharing"
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ backgroundColor: '#2c8bac' }}
+                  >
+                    {t('common:download_img')} <i className="fas fa-images" />
+                  </a>
                 </MDBCard>
               </MDBCol>
+
               <MDBCol className="col-lg-4 col-sm-6 mb-4">
                 <MDBCard className="h-100">
-                  <Link href="https://bit.ly/3CwowBf">
-                    <a target="_blank">
-                      <div className="bg-image hover-zoom">
-                        <img
-                          src="/imgs/bleedingdisplaysquare.svg"
-                          className="w-100"
-                          alt="PLACEHOLDER"
-                        />
-                      </div>
-                      <MDBCardBody>
-                        <MDBCardText>
-                          <h4> {t('index:treat_wounds')}</h4>
-                          <p> {t('index:treat_wounds_subheading')}</p>
-                        </MDBCardText>
-                      </MDBCardBody>
+                  <div className="bg-image hover-zoom">
+                    <a
+                      href="https://bit.ly/3CwowBf"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <img
+                        src="/imgs/bleedingdisplaysquare.svg"
+                        className="w-100"
+                        alt="PLACEHOLDER"
+                      />
                     </a>
-                  </Link>
+                  </div>
+
+                  <MDBCardBody>
+                    <MDBCardTitle>{t('index:treat_wounds')}</MDBCardTitle>
+                    <MDBCardText>
+                      {t('index:treat_wounds_subheading')}
+                    </MDBCardText>
+                  </MDBCardBody>
+
+                  <a
+                    className="btn btn-lg text-white"
+                    href="https://bit.ly/3CwowBf"
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ backgroundColor: '#2c8bac' }}
+                  >
+                    {t('common:download_pdf')} <i className="fas fa-download" />
+                  </a>
                 </MDBCard>
               </MDBCol>
             </MDBRow>
