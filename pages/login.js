@@ -1,10 +1,7 @@
 import { MDBCard, MDBCardBody } from 'mdb-react-ui-kit';
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Navigation from '../components/Navigation';
 
 export default function Login() {
-  const { t } = useTranslation('');
   return (
     <div>
       <Navigation />
@@ -75,11 +72,4 @@ export default function Login() {
       </section>
     </div>
   );
-}
-export async function getStaticProps({ locale }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common', 'index'])),
-    },
-  };
 }
