@@ -2,7 +2,6 @@ import { css } from '@emotion/react';
 import {
   MDBCard,
   MDBCardBody,
-  MDBCardFooter,
   MDBCardText,
   MDBCardTitle,
   MDBCol,
@@ -60,7 +59,7 @@ export default function Home() {
                     {t('index:title')}
                   </MDBTypography>
 
-                  <MDBTypography className="display-6 mb-3 fs-2 fst-italic fw-lighter">
+                  <MDBTypography className="display-6 mb-3 fs-2  fw-lighter">
                     {t('index:title_subheading')}
                   </MDBTypography>
                 </div>
@@ -77,7 +76,7 @@ export default function Home() {
                 <MDBCard className="h-100">
                   <div className="bg-image hover-zoom">
                     <a
-                      href="https://bit.ly/3T1xaic"
+                      href="/downloads/protestsafely.pdf"
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -98,7 +97,7 @@ export default function Home() {
 
                   <a
                     className="btn btn-lg text-white"
-                    href="https://bit.ly/3T1xaic"
+                    href="/downloads/protestsafely.pdf"
                     target="_blank"
                     rel="noreferrer"
                     style={{ backgroundColor: '#2c8bac' }}
@@ -149,7 +148,7 @@ export default function Home() {
                 <MDBCard className="h-100">
                   <div className="bg-image hover-zoom">
                     <a
-                      href="https://bit.ly/3CwowBf"
+                      href="/downloads/treatbleeding.pdf"
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -170,7 +169,7 @@ export default function Home() {
 
                   <a
                     className="btn btn-lg text-white"
-                    href="https://bit.ly/3CwowBf"
+                    href="/downloads/treatbleeding.pdf"
                     target="_blank"
                     rel="noreferrer"
                     style={{ backgroundColor: '#2c8bac' }}
