@@ -1,1 +1,13 @@
-{"donate":"Donate","download_img":"Download the Images","download_pdf":"Download the PDF","follow":"Follow OpIrRen:","home":"Home","learn_more":"Learn More","mission":"Mission","persian":"فارسی","projects":"Projects"}
+{
+  "common": {
+    "donate": "Donate",
+    "download_img": "Download the Images",
+    "download_pdf": "Download the PDF",
+    "follow": "Follow OpIrRen:",
+    "home": "Home",
+    "learn_more": "Learn More",
+    "mission": "Mission",
+    "persian": "فارسی",
+    "projects": "Projects"
+  }
+}
