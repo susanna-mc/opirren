@@ -1,10 +1,16 @@
 import { MDBCard, MDBCardBody } from 'mdb-react-ui-kit';
+import Head from 'next/head';
 // import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Adminnavigation from '../components/Adminnavigation';
 
 export default function Admin() {
   return (
     <div>
+      <Head>
+        <title>Backend: OpIrRen</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Adminnavigation />
       <section className="vh-100 mt-5">
         <div className="container py-5 h-100">

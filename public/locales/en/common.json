@@ -1,15 +1,15 @@
 {
   "common": {
-    "donate": "Donate",
-    "download_img": "Download the Images",
-    "download_pdf": "Download the PDF",
-    "follow": "Follow OpIrRen:",
     "home": "Home",
-    "learn_more": "Learn More",
+    "donate": "Donate",
+    "follow": "Follow OpIrRen:",
     "log_out": "Log Out",
     "mission": "Mission",
     "persian": "فارسی",
+    "sign_in": "Sign in",
     "projects": "Projects",
-    "sign_in": "Sign in"
+    "learn_more": "Learn More",
+    "download_img": "Download the Images",
+    "download_pdf": "Download the PDF"
   }
 }

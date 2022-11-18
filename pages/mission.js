@@ -41,7 +41,7 @@ export default function Mission() {
                   <img
                     src="/imgs/mission1stimage.jpg"
                     className="w-100  "
-                    alt="..."
+                    alt="Photograph by Babak Dalivand, in Austria, Vienna, 2022. Three hands of Iranians protesting, two male and one female, are raised high in the 'peace sign,' also known as the 'victory sign.'"
                   />{' '}
                 </div>
               </MDBCol>
@@ -93,7 +93,7 @@ export default function Mission() {
                   <img
                     src="/imgs/missionvalues.jpg"
                     className="w-100 "
-                    alt="..."
+                    alt="Photograph by Babak Dalivand, in Austria, Vienna, 2022. An Iranian woman is pictured protesting in front of St. Stephen's Cathedral in Vienna. She has dark hair and a black sweatshirt and is wearing red face paint in the appearance of bloody tears; her mouth is slightly agape. She holds a cardboard sign as she looks downwards and toward the right. A crowd can be seen behind her."
                   />{' '}
                 </div>
               </MDBCol>

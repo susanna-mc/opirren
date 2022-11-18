@@ -8,6 +8,7 @@ import {
 } from 'mdb-react-ui-kit';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Head from 'next/head';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 
@@ -15,6 +16,11 @@ export default function Donate() {
   const { t } = useTranslation('');
   return (
     <div>
+      <Head>
+        <title>Donate to Operation Iranian Renaissance</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Navigation />
       <div
         className="mt-5 bg-image "
@@ -30,7 +36,7 @@ export default function Donate() {
                 <MDBCardImage
                   src="/imgs/finalizedlogo.png"
                   className="card-img-top "
-                  alt="Operation Iranian Renaissance abbreviated logo"
+                  alt="Operation Iranian Renaissance, abbreviated logo, containing the acronym 'OpIrRen' inside the black silhouette of Iran's land borders."
                 />
                 <MDBCardBody className="p-4">
                   <MDBRow className="d-flex align-items-center">
@@ -40,7 +46,8 @@ export default function Donate() {
                       href="https://donate.stripe.com/test_5kAg206RN32m4kU288"
                       style={{ backgroundColor: '#2c8bac' }}
                     >
-                      Donate <i className="fas fa-donate" />{' '}
+                      {t('Donate:donate_btn')}
+                      <i className="fas fa-donate" />{' '}
                     </a>
                   </MDBRow>
                 </MDBCardBody>
@@ -57,7 +64,7 @@ export default function Donate() {
 export async function getServerSideProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'index'])),
+      ...(await serverSideTranslations(locale, ['common', 'Donate'])),
     },
   };
 }

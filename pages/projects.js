@@ -19,7 +19,7 @@ export default function Projects() {
   return (
     <div>
       <Head>
-        <title>Operation Iranian Renaissance</title>
+        <title>Projects: Operation Iranian Renaissance</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -29,7 +29,7 @@ export default function Projects() {
           <div
             className="p-5 mt-5 text-center bg-image "
             style={{
-              backgroundImage: 'url(/imgs/bluemosaic.svg)',
+              backgroundImage: 'url(/imgs/circlemosiac1.jpeg)',
               height: '600px',
             }}
           >
@@ -66,7 +66,7 @@ export default function Projects() {
                       <img
                         src="/imgs/protestdisplaysquare.svg"
                         className="w-100"
-                        alt="PLACEHOLDER"
+                        alt="Preview of 'How to Protest Safely' Persian-language manual."
                       />
                     </a>
                   </div>
@@ -101,7 +101,7 @@ export default function Projects() {
                       <img
                         src="/imgs/distributivematerials.svg"
                         className="w-100"
-                        alt="PLACEHOLDER"
+                        alt="Preview of pre-made social media posts for easy distribution of Operation Iranian Renaissance Persian-language manuals."
                       />
                     </a>
                   </div>
@@ -138,7 +138,7 @@ export default function Projects() {
                       <img
                         src="/imgs/bleedingdisplaysquare.svg"
                         className="w-100"
-                        alt="PLACEHOLDER"
+                        alt="Preview of 'How to Treat Bleeding and Gunshot Wounds' Persian-language manual."
                       />
                     </a>
                   </div>
@@ -171,7 +171,7 @@ export default function Projects() {
                 <img
                   src="/imgs/futureprojects.jpg"
                   className="w-100"
-                  alt="..."
+                  alt="Photograh by Babak Dalivand, in Austria, Vienna, 2022. Taken Saturday, October 8th, 2022 in Stephanzplatz plaza, Vienna, Austria as part of the 'Global Day Of Solidarity With Iranian Women.' A protest leader stands in the center of a circle of protesters. He has black hair and is wearing a dark sweater and a collared shirt. He is holding two microphones in his left hand, raised to his face as he yells a chant. His right arm is raised high above his head as he holds a clipboard. Hundreds of protesters are seen far into the horizon."
                 />
               </div>
             </MDBCol>
