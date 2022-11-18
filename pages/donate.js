@@ -34,7 +34,7 @@ export default function Donate() {
                 />
                 <MDBCardBody className="p-4">
                   <MDBRow className="d-flex align-items-center">
-                    <h1> DONATION VERBIAGE </h1>
+                    <h2> Page under construction </h2>
                     <a
                       className="btn btn-lg stretched-link mt-4 text-white"
                       href="https://donate.stripe.com/test_5kAg206RN32m4kU288"
