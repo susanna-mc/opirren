@@ -45,7 +45,7 @@ export default function Home() {
           <div
             className="p-5 text-center bg-image "
             style={{
-              backgroundImage: 'url(/imgs/blueheroimage.svg)',
+              backgroundImage: 'url(/imgs/hero-image.jpeg)',
               height: '600px',
             }}
           >
@@ -83,7 +83,7 @@ export default function Home() {
                       <img
                         src="/imgs/protestdisplaysquare.svg"
                         className="w-100"
-                        alt="PLACEHOLDER"
+                        alt="Preview of 'How to Protest Safely' Persian-language manual."
                       />
                     </a>
                   </div>
@@ -118,7 +118,7 @@ export default function Home() {
                       <img
                         src="/imgs/distributivematerials.svg"
                         className="w-100"
-                        alt="PLACEHOLDER"
+                        alt="Preview of pre-made social media posts for easy distribution of Operation Iranian Renaissance Persian-language manuals."
                       />
                     </a>
                   </div>
@@ -155,7 +155,7 @@ export default function Home() {
                       <img
                         src="/imgs/bleedingdisplaysquare.svg"
                         className="w-100"
-                        alt="PLACEHOLDER"
+                        alt="Preview of 'How to Treat Bleeding and Gunshot Wounds' Persian-language manual."
                       />
                     </a>
                   </div>
@@ -187,7 +187,11 @@ export default function Home() {
             <MDBRow>
               <MDBCol className="col-lg-4 col-sm-6 mt-4 mb-4">
                 <div className="bg-image rounded-6 hover-shadow">
-                  <img src="/imgs/missionImage.png" className="w-100 " alt="" />
+                  <img
+                    src="/imgs/missionImage.png"
+                    className="w-100 "
+                    alt="Artwork by Istanbul-based artist Hemad Javadzade. The painting features an Iranian woman wearing a white shirt and blue pants wrestling a brown hairy demon that wears black boots. With one arm, she pulls back the demon's jaw; the other arm is raised, grasping scissors, ready to strike. One foot is stomping on the demon's baton to keep the weapon out of his reach. Her black hair is not covered by a hijab and swirls around her body in a shape that roughly resembles the borders of Iran. She looks angry and determined as the demon snarls with its tongue out."
+                  />
 
                   <div
                     className="mask"
@@ -221,7 +225,11 @@ export default function Home() {
               </MDBCol>
               <MDBCol className="col-lg-4 col-sm-6 mt-4 mb-4">
                 <div className="bg-image rounded-6 hover-shadow">
-                  <img src="/imgs/futureImage.png" className="w-100" alt="" />
+                  <img
+                    src="/imgs/futureImage.png"
+                    className="w-100"
+                    alt="Photograph from 2022 Mahsa Amini Uprising; numerous university students gather for an on-campus protest. In the foreground, a woman wearing a black chador, glasses, and a mask stands with her back toward the camera. She is tying the brown hair of the unveiled woman in front of her into a braid."
+                  />
 
                   <div
                     className="mask"
@@ -254,7 +262,11 @@ export default function Home() {
               </MDBCol>
               <MDBCol className="col-lg-4 col-sm-6 mt-4 mb-4">
                 <div className="bg-image rounded-6 hover-shadow">
-                  <img src="/imgs/valuesImage.png" className="w-100" alt="" />
+                  <img
+                    src="/imgs/valuesImage.png"
+                    className="w-100"
+                    alt="Photograph from 2022 Mahsa Amini Uprising; four women chat pleasantly at a table in Iran. Two are wearing conservative black chadors; two are without hijab."
+                  />
 
                   <div
                     className="mask"

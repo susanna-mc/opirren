@@ -130,6 +130,7 @@ export default function Navigation() {
                     </a>
                   </Link>
                 </MDBNavbarItem>
+
                 <MDBNavbarItem>
                   <Link href="/register">
                     <a
