@@ -36,14 +36,6 @@ const navbar = css`
   }
 `;
 
-// const donateButton = css`
-//   background-color: #0326cb;
-//   padding: 10px 5px;
-//   border-radius: 15px;
-//   height: 20px;
-// margin-left: 20px;
-// `;
-
 export default function Navigation() {
   const router = useRouter();
 
@@ -135,6 +127,17 @@ export default function Navigation() {
                       }`}
                     >
                       {t('common.donate')}
+                    </a>
+                  </Link>
+                </MDBNavbarItem>
+                <MDBNavbarItem>
+                  <Link href="/register">
+                    <a
+                      className={`nav-link ${
+                        router.pathname === '/register' ? 'active' : ''
+                      }`}
+                    >
+                      {t('common.sign_in')}
                     </a>
                   </Link>
                 </MDBNavbarItem>

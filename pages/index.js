@@ -96,7 +96,7 @@ export default function Home() {
                   </MDBCardBody>
 
                   <a
-                    className="btn btn-lg text-white"
+                    className="btn btn-info btn-lg text-white"
                     href="/downloads/protestsafely.pdf"
                     target="_blank"
                     rel="noreferrer"
@@ -133,7 +133,7 @@ export default function Home() {
                   </MDBCardBody>
 
                   <a
-                    className="btn btn-lg text-white"
+                    className="btn btn-info btn-lg text-white"
                     href="https://drive.google.com/drive/folders/1ktEu_SQK-KBShEkkRiG-Lzaj1PA-3JIM?usp=sharing"
                     target="_blank"
                     rel="noreferrer"
@@ -168,7 +168,7 @@ export default function Home() {
                   </MDBCardBody>
 
                   <a
-                    className="btn btn-lg text-white"
+                    className="btn btn-info btn-lg text-white"
                     href="/downloads/treatbleeding.pdf"
                     target="_blank"
                     rel="noreferrer"
