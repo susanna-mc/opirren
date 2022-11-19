@@ -17,11 +17,7 @@ export default function Admin() {
           <div className="row d-flex align-items-center justify-content-center h-100">
             <div className="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
               <MDBCard className="h-100">
-                <img
-                  className="card-img-top"
-                  src="/imgs/BB_DramaticAnime.png"
-                  alt=""
-                />
+                <img className="card-img-top" src="/imgs/cattype.gif" alt="" />
                 <MDBCardBody>
                   <form>
                     <label htmlFor="formFileLg" className="form-label">
