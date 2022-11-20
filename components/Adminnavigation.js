@@ -78,7 +78,7 @@ export default function Adminnavigation() {
             <MDBCollapse navbar show={showNavNoTogglerSecond}>
               <MDBNavbarNav className="mr-auto mb-2 mb-lg-0">
                 <MDBNavbarItem>
-                  <Link href="/">
+                  <Link href="/logout">
                     <a>Log Out</a>
                   </Link>
                 </MDBNavbarItem>
