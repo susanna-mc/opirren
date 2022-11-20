@@ -1,7 +1,11 @@
 import { MDBCard, MDBCardBody } from 'mdb-react-ui-kit';
+import { GetServerSidePropsContext } from 'next';
 import Head from 'next/head';
 // import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Adminnavigation from '../components/Adminnavigation';
+
+// import { getValidSessionByToken } from '../database/sessions';
+// import { getUserBySessionToken, User } from '../database/users';
 
 export default function Admin() {
   return (
@@ -64,5 +68,23 @@ export default function Admin() {
 //     props: {
 //       ...(await serverSideTranslations(locale, ['common', 'index'])),
 //     },
+//   };
+// }
+
+// export async function getServerSideProps(context: GetServerSidePropsContext) {
+//   const token = context.req.cookies.sessionToken;
+
+//   // const user = token && (await getUserBySessionToken(token));
+
+//   if (!token || !(await getValidSessionByToken(token))) {
+//     return {
+//       redirect: {
+//         destination: '/login',
+//         permanent: false,
+//       },
+//     };
+//   }
+//   return {
+//     props: {},
 //   };
 // }

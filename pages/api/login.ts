@@ -1,9 +1,9 @@
 import crypto from 'node:crypto';
-import { create } from 'node:domain';
 import bcrypt from 'bcrypt';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { createSession } from '../../database/sessions';
 import { getUserWithPasswordHashbyUsername } from '../../database/users';
+import { createSerializedRegisterSessionTokenCookie } from '../../utils/cookies';
 
 export type LoginResponseBody =
   | { errors: { message: string }[] }
@@ -45,19 +45,23 @@ export default async function handler(
         .json({ errors: [{ message: 'password is invalid' }] });
     }
 
-    console.log('isValidPassword', isValidPassword);
-
     // 4. create session and token
 
     const session = await createSession(
       user.id,
       crypto.randomBytes(80).toString('base64'),
     );
-    console.log(session);
+
+    const serializedCookie = createSerializedRegisterSessionTokenCookie(
+      session.token,
+    );
 
     // response method endpoint
 
-    response.status(200).json({ user: { username: user.username } });
+    response
+      .status(200)
+      .setHeader('Set-Cookie', serializedCookie)
+      .json({ user: { username: user.username } });
   } else {
     response.status(401).json({ errors: [{ message: 'Method not allowed' }] });
   }

@@ -1,5 +1,7 @@
+import { GetServerSidePropsContext } from 'next';
 import Head from 'next/head';
 import { useState } from 'react';
+import { getValidSessionByToken } from '../database/sessions';
 import { RegisterResponseBody } from './api/register';
 
 export default function Register() {
@@ -61,4 +63,21 @@ export default function Register() {
       </button>
     </>
   );
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const token = context.req.cookies.sessionToken;
+
+  if (token && (await getValidSessionByToken(token))) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: true,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
 }

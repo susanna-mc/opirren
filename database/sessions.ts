@@ -17,7 +17,9 @@ export async function createSession(userId: User['id'], token: string) {
     token
   `;
 
-  return session;
+  await deleteExpiredSessions();
+
+  return session!;
 }
 
 export async function getValidSessionByToken(token: Session['token']) {
@@ -34,6 +36,34 @@ export async function getValidSessionByToken(token: Session['token']) {
   AND
     sessions.expiry_timestamp > now()
 `;
+
+  return session;
+}
+
+export async function deleteExpiredSessions() {
+  const sessions = await sql<Session[]>`
+  DELETE FROM
+    sessions
+  WHERE
+    expiry_timestamp < now()
+  RETURNING
+    id,
+    token
+  `;
+
+  return sessions;
+}
+
+export async function deleteSessionByToken(token: string) {
+  const [session] = await sql<Session[]>`
+  DELETE FROM
+    sessions
+  WHERE
+    sessions.token = ${token}
+  RETURNING
+    id,
+    token
+  `;
 
   return session;
 }
