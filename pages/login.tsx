@@ -25,8 +25,8 @@ export default function Login() {
     const loginResponseBody = (await loginResponse.json()) as LoginResponseBody;
 
     if ('errors' in loginResponseBody) {
-      setErrors(loginResponse.errors);
-      return console.log(loginResponse.errors);
+      setErrors(loginResponseBody.errors);
+      return console.log(loginResponseBody.errors);
     }
     await router.push('/admin');
   }

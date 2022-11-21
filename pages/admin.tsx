@@ -3,9 +3,7 @@ import { GetServerSidePropsContext } from 'next';
 import Head from 'next/head';
 // import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Adminnavigation from '../components/Adminnavigation';
-
-// import { getValidSessionByToken } from '../database/sessions';
-// import { getUserBySessionToken, User } from '../database/users';
+import { getValidSessionByToken } from '../database/sessions';
 
 export default function Admin() {
   return (
@@ -71,20 +69,20 @@ export default function Admin() {
 //   };
 // }
 
-// export async function getServerSideProps(context: GetServerSidePropsContext) {
-//   const token = context.req.cookies.sessionToken;
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const token = context.req.cookies.sessionToken;
 
-//   // const user = token && (await getUserBySessionToken(token));
+  // const user = token && (await getUserBySessionToken(token));
 
-//   if (!token || !(await getValidSessionByToken(token))) {
-//     return {
-//       redirect: {
-//         destination: '/login',
-//         permanent: false,
-//       },
-//     };
-//   }
-//   return {
-//     props: {},
-//   };
-// }
+  if (!token || !(await getValidSessionByToken(token))) {
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false,
+      },
+    };
+  }
+  return {
+    props: {},
+  };
+}
