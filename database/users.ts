@@ -22,20 +22,6 @@ export async function getUserByUsername(username: string) {
   return user;
 }
 
-export async function createUser(username: string, password_hash: string) {
-  const [userWithoutPassword] = await sql<{ id: number; username: string }[]>`
-  INSERT INTO users
-    (username, password_hash)
-  VALUES
-    ( ${username},${password_hash} )
-
-  RETURNING
-    id,
-    username
-  `;
-  return userWithoutPassword!;
-}
-
 export async function getUserWithPasswordHashbyUsername(username: string) {
   if (!username) return undefined;
 
@@ -49,4 +35,18 @@ export async function getUserWithPasswordHashbyUsername(username: string) {
   `;
 
   return user;
+}
+
+export async function createUser(username: string, password_hash: string) {
+  const [userWithoutPassword] = await sql<{ id: number; username: string }[]>`
+  INSERT INTO users
+    (username, password_hash)
+  VALUES
+    ( ${username},${password_hash} )
+
+  RETURNING
+    id,
+    username
+  `;
+  return userWithoutPassword!;
 }
