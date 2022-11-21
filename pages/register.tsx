@@ -7,6 +7,7 @@ import { RegisterResponseBody } from './api/register';
 export default function Register() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState<{ message: string }[]>([]);
 
   async function registerHandler() {
     const registerResponse = await fetch('/api/register', {
@@ -22,9 +23,11 @@ export default function Register() {
     const registerResponseBody =
       (await registerResponse.json()) as RegisterResponseBody;
 
-    console.log(registerResponseBody);
+    if ('errors' in registerResponseBody) {
+      setErrors(registerResponseBody.errors);
+      return console.log(registerResponseBody.errors);
+    }
   }
-
   return (
     <>
       <Head>
@@ -32,6 +35,9 @@ export default function Register() {
         <meta name="description" content="Register new users" />
       </Head>
       Register
+      {errors.map((error) => {
+        return <p key={error.message}>ERROR: {error.message}</p>;
+      })}
       <label>
         {' '}
         Username
