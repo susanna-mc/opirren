@@ -11,19 +11,25 @@ export default function LocaleSwitcher() {
   );
 
   return (
-    <span className="text-muted cursor-pointer">
-      {otherLocales?.map((locale) => {
-        const { pathname, query, asPath } = router;
-        return (
-          <span key={'locale-' + locale}>
-            <Link href={{ pathname, query }} as={asPath} locale={locale}>
-              <a>
-                {locale === 'en' ? 'English' : locale === 'fa' ? 'فارسی' : null}
-              </a>
-            </Link>
-          </span>
-        );
-      })}
-    </span>
+    <div>
+      <span className="text-muted cursor-pointer">
+        {otherLocales?.map((locale) => {
+          const { pathname, query, asPath } = router;
+          return (
+            <span key={'locale-' + locale}>
+              <Link href={{ pathname, query }} as={asPath} locale={locale}>
+                <a>
+                  {locale === 'en'
+                    ? 'English'
+                    : locale === 'fa'
+                    ? 'فارسی'
+                    : null}
+                </a>
+              </Link>
+            </span>
+          );
+        })}
+      </span>
+    </div>
   );
 }
