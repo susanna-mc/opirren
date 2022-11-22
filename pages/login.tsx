@@ -83,7 +83,9 @@ export default function Login() {
                           value={username}
                           onChange={(event) => {
                             setUsername(
-                              event.currentTarget.value.toLowerCase(),
+                              (
+                                event.currentTarget as HTMLInputElement
+                              ).value.toLowerCase(),
                             );
                           }}
                         />
@@ -132,31 +134,6 @@ export default function Login() {
     </>
   );
 }
-
-// export async function getServerSideProps({ locale }) {
-//   return {
-//     props: {
-//       ...(await serverSideTranslations(locale, ['common', 'Log_In'])),
-//     },
-//   };
-// }
-
-// export async function getServerSideProps(context: GetServerSidePropsContext) {
-//   const token = context.req.cookies.sessionToken;
-
-//   if (token && (await getValidSessionByToken(token))) {
-//     return {
-//       redirect: {
-//         destination: '/',
-//         permanent: true,
-//       },
-//     };
-//   }
-
-//   return {
-//     props: {},
-//   };
-// }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const token = context.req.cookies.sessionToken;
