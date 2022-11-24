@@ -44,6 +44,8 @@ export default function Donate() {
                     <a
                       className="btn btn-lg stretched-link mt-4 text-white"
                       href="https://donate.stripe.com/test_5kAg206RN32m4kU288"
+                      target="_blank"
+                      rel="noreferrer"
                       style={{ backgroundColor: '#2c8bac' }}
                     >
                       {t('Donate:donate_btn')}
