@@ -6,11 +6,11 @@ module.exports = {
     defaultLocale: 'default',
 
     localeDetection: false,
-  },
-  reloadOnPrerender: process.env.NODE_ENV === 'development',
-  localePath: path.resolve('./public/locales'),
+    reloadOnPrerender: false,
+    localePath: path.resolve('./public/locales'),
 
-  otherLanguages: ['en', 'fa'],
-  defaultLanguage: ['en'],
-  fallbackLng: ['en'],
+    otherLanguages: ['en', 'fa'],
+
+    fallbackLng: ['en'],
+  },
 };
