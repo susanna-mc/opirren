@@ -101,12 +101,12 @@
 ```
 
 ## Deploy on Fly.io
-Create a Fly.io Token, must be named " GitHub Actions Deploy Token", and copy text
-Make a new repository secret  called FLY API TOKEN
-Using the command line, sign in to Fly.io via `flyctl auth login`
-Make a flyctl app `flyctl apps create —name <app name>`
-Make the Fly.io configuration files
-Add database login information with Fly.io secrets `flyctl secrets set PGHOST=localhost PGDATABASE=$(openssl rand -hex 16) PGUSERNAME=upleveled$(openssl rand -hex 16) PGPASSWORD=$(openssl rand -base64 32)`
-Add built-time environment variables to the fly.toml and dockerfile configuration files, more information here: https://fly.io/docs/languages-and-frameworks/nextjs/#what-about-build-time-environment-variables 
-For the PostgreSQL database, create a 1GB volume with `flyctl volumes create postgres --size 1 --region fra'
-Launch!: `flyctl deploy`
+- Generate a Fly.io Token, called GitHub Actions Deploy Token and copy the text
+- Make a new repository secret  called FLY API TOKEN
+- Using the command line, sign in to Fly.io via `flyctl auth login`
+- Make a flyctl app `flyctl apps create —name <app name>`
+- Make the Fly.io configuration files
+- Add database login information with Fly.io secrets `flyctl secrets set PGHOST=localhost PGDATABASE=$(openssl rand -hex 16) PGUSERNAME=upleveled$(openssl rand -hex 16) PGPASSWORD=$(openssl rand -base64 32)`
+- Add built-time environment variables to the fly.toml and dockerfile configuration files, more information here: https://fly.io/docs/languages-and-frameworks/nextjs/#what-about-build-time-environment-variables 
+- For the PostgreSQL database, create a 1GB volume with `flyctl volumes create postgres --size 1 --region fra'
+- Launch!: `flyctl deploy`
