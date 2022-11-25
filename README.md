@@ -1,34 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Description:
+![OPIRREN full logo black white bkg](https://user-images.githubusercontent.com/109186471/204033658-61c786aa-6f84-4ee5-9b5d-82cc0496822f.png)
 
-## Getting Started
 
-First, run the development server:
+- **_Origin:_** OpIrRen, is a creation of Atheist Republic’s Persian community.
+- Our community sought to directly respond to the needs and pleas for help from our members living inside Iran amidst the current uprising and violent - crackdown by translating guides on how to protest safely and treat gunshot wounds. 
+- However, we can not release these materials under the name of our current organization because atheism is punishable by death in Iran, so we must remove that affiliation from these manuals.
+- We want these materials to be shared widely for maximum impact, so we must distance ourselves from any stigma or risk that would discourage distribution.
+- **_Visit the deployed site [here](https://opirren.fly.dev/)._** 
 
-```bash
-npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Design:
+- Fully responsive
+- Prototyped in Figma
+- Implemented with MDBootstrap and Emotion
+- Development of User stories
+- Snapshot of some design vision-boarding: 
+<img width="444" alt="Screen Shot 2022-11-25 at 4 39 00 PM" src="https://user-images.githubusercontent.com/109186471/204032352-1dad02b2-31a6-4ed1-bed6-cf4d81742d3b.png">
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Functionalities:
+- Multilingual, full English & Persian translation
+- Right-to-Left direction switching to service Persian language
+- Dynamic routing for the selected language
+- Collapsible header navigation bar
+- Each page is fully responsive for mobile devices
+- Easily downloadable PDFs
+- Stripe integration for donations
+- User authorization with session tokens
+- A restricted page for administrators 
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Technologies: 
+- Figma
+- Node.js
+- PostgreSQL
+- DrawSQL
+- Ley
+- React
+- Next.js
+- Next-i18next, for internalization
+- i18nexus for management of string translations and structure of locale json files
+- i18nexus-cli for working with i18nexus API
+- Typescript
+- REST API
+- MDBootstrap
+- Emotion
+- Stripe
+- Docker
+- Fly.io
 
-## Learn More
+## Screenshots: 
+### Landing Page: English & Persian
+![Landing page bilingual](https://user-images.githubusercontent.com/109186471/204032707-e55718c6-8081-486b-b488-c3dbd0dbe8c1.png)
 
-To learn more about Next.js, take a look at the following resources:
+### Mission Page: English & Persian
+![Mission page bilingual](https://user-images.githubusercontent.com/109186471/204032741-cd190f87-6a42-4c62-9c2e-0f67970176d6.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Preview of Collapisble Menu & Mobile device view (featuring Projects page in English and Donation page in Persian) 
+![Mobile devices](https://user-images.githubusercontent.com/109186471/204032770-5af91536-58f1-40ee-afe3-5c2e6eaf145d.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Registration page:
+![sign in page](https://user-images.githubusercontent.com/109186471/204032818-bbe99f15-4ed2-4308-a29a-de5bf78fe6f6.png)
 
-## Deploy on Vercel
+### Login page:
+![login page](https://user-images.githubusercontent.com/109186471/204032837-4ecd30f5-bacc-46f2-9606-17d9cc84bf97.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Restricted Admin page: 
+![admin page (1)](https://user-images.githubusercontent.com/109186471/204032917-ad53c63d-0fe6-4b6f-8185-4cef8e06ae2b.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Project Management:
+- Managing an international team of 7 
+- Creating workflow for translation team onboarding
+- 
+
+## Project Set-Up:
