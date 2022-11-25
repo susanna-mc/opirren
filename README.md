@@ -2,12 +2,10 @@
 ![OPIRREN full logo black white bkg](https://user-images.githubusercontent.com/109186471/204033658-61c786aa-6f84-4ee5-9b5d-82cc0496822f.png)
 
 
-- **_Origin:_** OpIrRen, is a creation of Atheist Republic’s Persian community.
-- Our community sought to directly respond to the needs and pleas for help from our members living inside Iran amidst the current uprising and violent - crackdown by translating guides on how to protest safely and treat gunshot wounds. 
-- However, we can not release these materials under the name of our current organization because atheism is punishable by death in Iran, so we must remove that affiliation from these manuals.
-- We want these materials to be shared widely for maximum impact, so we must distance ourselves from any stigma or risk that would discourage distribution.
+- **_Origin:_** Operation Iranian Renaissance (OpIrRen), is a creation of the Atheist Republic Persian community.
+- Our community sought to directly respond to the needs and pleas for help from our members living inside Iran amidst the current uprising and violent  crackdown, by translating guides on how to protest safely, treat gunshot wounds, treat tear gas, etc. 
+- However, we can not release these materials under the name of our current organization because atheism is punishable by death in Iran, so we must remove that affiliation from these manuals, hence launching under a new name. 
 - **_Visit the deployed site [here](https://opirren.fly.dev/)._** 
-
 
 ## Design:
 - Fully responsive
@@ -16,7 +14,6 @@
 - Development of User stories
 - Snapshot of some design vision-boarding: 
 <img width="444" alt="Screen Shot 2022-11-25 at 4 39 00 PM" src="https://user-images.githubusercontent.com/109186471/204032352-1dad02b2-31a6-4ed1-bed6-cf4d81742d3b.png">
-
 
 ## Functionalities:
 - Multilingual, full English & Persian translation
