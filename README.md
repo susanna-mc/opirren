@@ -24,7 +24,7 @@
 - Dynamic routing for the selected language
 - Collapsible header navigation bar
 - Each page is fully responsive for mobile devices
-- Easily downloadable PDFs
+- Easily downloadable PDFs and pre-made social media posts for simple distribution of PDFs
 - Stripe integration for donations
 - User authorization with session tokens
 - A restricted page for administrators 
@@ -69,8 +69,47 @@
 
 
 ## Project Management:
-- Managing an international team of 7 
+- Managing an international team of 7
 - Creating workflow for translation team onboarding
-- 
+- Working with community to create scope and vision of think-tank
+- Navigating challenging and sensitive security concerns
+- Research and compiling documents to be translated
+- Creation of visual language, logo, and visual assets 
 
-## Project Set-Up:
+## Instructions for Setup:
+
+- Use `git clone <repository>` to duplicate the repository
+- Install PostgreSQL and set up database
+- Create a database and a user
+- Make a new `.env` file
+- `.env-example` should be used to copy the environment variables into `.env`
+- If you want to create new translations and namespaces create a free account on [i18nexus](https://i18nexus.com/)
+- Once you are done creating translated strings & namespaces in i18nexus go to the 'Export' tab and copy the project API key into the desinated spot in `.env`
+- If you are using different languages besides Persian you must change the language code from `'fa'` to the relevant language code in the following files: `/components/navigation.js` & `next-i18next.config.js`
+    - Note that the Navigation bar will still implement right-to-left direction switching for any replacement language
+- For the rest of the PostgreSQL database, replace the xxxx placeholders with your username, password, and database name
+- `yarn install`
+- `yarn migrate up`
+- Run `yarn dev` to launch the server
+- Currently, the scripts in `package.json` are written to only pull from the i18nexus API when running `yarn dev`
+- When new .json files are pulled in from i18nexus, the "common" namespace will be in a raw format that will mess up the naming conventions of the Navigation bar. To fix this, go into `/public/locales/en/common.json` and  `/public/locales/fa/common.json` and wrap everything inside in curly braces and give it the namespace identifier `"common":` like so: 
+```
+{
+  "common": {
+    "translation_key": "value",
+    "translation_key2": "value2",
+    "translation_key3": "value3",
+  }
+}
+```
+
+## Deploy on Fly.io
+Create a Fly.io Token, must be named " GitHub Actions Deploy Token", and copy text
+Make a new repository secret  called FLY API TOKEN
+Using the command line, sign in to Fly.io via `flyctl auth login`
+Make a flyctl app `flyctl apps create —name <app name>`
+Make the Fly.io configuration files
+Add database login information with Fly.io secrets `flyctl secrets set PGHOST=localhost PGDATABASE=$(openssl rand -hex 16) PGUSERNAME=upleveled$(openssl rand -hex 16) PGPASSWORD=$(openssl rand -base64 32)`
+Add built-time environment variables to the fly.toml and dockerfile configuration files, more information here: https://fly.io/docs/languages-and-frameworks/nextjs/#what-about-build-time-environment-variables 
+For the PostgreSQL database, create a 1GB volume with `flyctl volumes create postgres --size 1 --region fra'
+Launch!: `flyctl deploy`
