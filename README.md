@@ -12,8 +12,9 @@
 - Prototyped in Figma
 - Implemented with MDBootstrap and Emotion
 - Development of User stories
-- Snapshot of some design vision-boarding: 
-<img width="444" alt="Screen Shot 2022-11-25 at 4 39 00 PM" src="https://user-images.githubusercontent.com/109186471/204032352-1dad02b2-31a6-4ed1-bed6-cf4d81742d3b.png">
+- *Wireframe & Snapshot of some design vision-boarding:* 
+![figma](https://user-images.githubusercontent.com/109186471/204063011-885fd4ae-ca22-415b-a283-a0c2247bc4be.png)
+
 
 ## Functionalities:
 - Multilingual, full English & Persian translation
